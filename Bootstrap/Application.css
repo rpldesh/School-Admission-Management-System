@@ -71,7 +71,7 @@ input:-moz-placeholder {
     color:    #b5b5b5;
 }
 
-#signup .inputs input[type=email], input[type=password],input[type=text] {
+#signup .inputs input[type=email], input[type=password],input[type=text],input[type=date],select {
     background: #f5f5f5;
     font-size: 0.8rem;
     -moz-border-radius: 3px;
@@ -85,7 +85,7 @@ input:-moz-placeholder {
     clear: both;
 }
 
-#signup .inputs input[type=email]:focus, input[type=password]:focus {
+#signup .inputs input[type=email]:focus, input[type=password]:focus, input[type=text]:focus, input[type=date]:focus, select{
     background: #fff;
     box-shadow: 0px 0px 0px 3px #fff38e, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
     outline: none;
