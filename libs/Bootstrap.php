@@ -1,4 +1,4 @@
-<<?php
+<?php
 
 class Bootstrap {
 
@@ -22,6 +22,7 @@ class Bootstrap {
         } else {
             require 'controllers/error.php';
             $controller = new Error();
+            $controller->index();
             return false;
         }
 
@@ -58,4 +59,3 @@ class Bootstrap {
     }
 
 }
-?>

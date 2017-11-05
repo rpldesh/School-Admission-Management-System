@@ -25,7 +25,7 @@ class Database extends PDO
         echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
         die;
 
-        $stmt=$this->db->prepare("INSERT into $table (`$fieldNames`) VALUES ($fieldValues)");
+        $stmt= $this->db->prepare("INSERT into $table (`$fieldNames`) VALUES ($fieldValues)");
         foreach ($data as $key=>$value){
             $stmt->bindValue(":$key",$value);
         }
