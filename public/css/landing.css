@@ -1,0 +1,23 @@
+.vertical-center-row {
+    margin:auto;
+    padding-top:150px;
+    padding-bottom:25px;
+    text-align:center;
+}
+.hidden{
+    display: none;
+}
+.heading{
+    font-size: 400%;
+}
+
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size:100%;
+    }
+}
+
+body{
+    background-image: url(../images/background.jpg);
+}
