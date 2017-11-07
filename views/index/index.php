@@ -33,7 +33,7 @@
             <label for="psw"><b>Password</b></label><br />
             <input name="psw" type="password" placeholder=" Enter Password" autofocus />
 
-            <lable></lable><input type="submit"/>
+            <lable></lable><input id="submit" type="submit"/>
 
 
         </div>
