@@ -1,7 +1,94 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: DiniX
- * Date: 07-Nov-17
- * Time: 12:06 PM
- */
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
+    <meta chartset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ID=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>School Page</title>
+    <link href="<?php echo URL ?>public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo URL ?>public/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <link href="<?php echo URL ?>public/css/homePage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="jumbotron">
+    <h1> School Name</h1>
+    <h4>Grade Entry Management system</h4>
+</div>
+<!-------------    Navigation Bar  ------------>
+<nav class="navbar navbar-inverse navbarmod">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="logIn.html">SCHOOL ADMISSIONS</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Member Profile</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-------------------------------------------->
+
+<div class="container-fluid text-center">
+    <h2 class="logo-small">SERVICES</h2>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-file"></span>
+            <a href=""><h4 class="logo-small">Enter Applicant data</h4></a>
+            <p>apply for school</p>
+        </div>
+
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href=""><h4 class="logo-small">View Students</h4></a>
+            <p>View students information</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href=""><h4 class="logo-small">Add Staff</h4></a>
+            <p>add staff members</p>
+        </div>
+        <br />
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href=""><h4 class="logo-small">Update Studet</h4></a>
+            <p>Update students Information</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href=""><h4 class="logo-small">Results</h4></a>
+            <p>View final results</p>
+        </div>
+    </div>
+    <br><br>
+
+
+    <div class="col-sm-4">
+        <span class="glyphicon glyphicon-wrench"></span>
+        <h4>Contact</h4>
+        <p></p>
+    </div>
+</div>
+
+
+
+
+<script src="<?php echo URL ?>public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
+
+</body>
+
+</html>

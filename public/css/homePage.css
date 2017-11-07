@@ -1,0 +1,21 @@
+body{
+    background-image: url("../images/background.jpg");
+}
+.jumbotron {
+    background-color: #670A0A; /* Orange */
+    color: #ffffff;
+    height:auto;
+    font-size: 50px;
+    padding: 1px;
+    margin: 0px;
+}
+
+.logo-small {
+    color: #15317E;
+    font-size: 25px;
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
