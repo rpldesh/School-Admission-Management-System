@@ -15,8 +15,7 @@
 <body>
 
 <div class="jumbotron">
-    <h1> School Name</h1>
-    <h4>Grade Entry Management system</h4>
+    <h3>Grade Entry Management system</h3>
 </div>
 <!-------------    Navigation Bar  ------------>
 <nav class="navbar navbar-inverse navbarmod">
@@ -27,7 +26,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="logIn.html">SCHOOL ADMISSIONS</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -47,40 +45,40 @@
     <div class="row">
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-file"></span>
-            <a href=""><h4 class="logo-small">Enter Applicant data</h4></a>
-            <p>apply for school</p>
+            <a href=""><h4 class="logo-small">Enter Applicant Data</h4></a>
+            <p>Enter details of applicants of your school</p>
         </div>
 
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
             <a href=""><h4 class="logo-small">View Students</h4></a>
-            <p>View students information</p>
+            <p>View detils of students of your school</p>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
             <a href=""><h4 class="logo-small">Add Staff</h4></a>
-            <p>add staff members</p>
+            <p>Add new members accounts for the system</p>
         </div>
         <br />
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">Update Studet</h4></a>
-            <p>Update students Information</p>
+            <a href=""><h4 class="logo-small">Update Student</h4></a>
+            <p>Update details of students of your school</p>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
             <a href=""><h4 class="logo-small">Results</h4></a>
-            <p>View final results</p>
+            <p>View final results for applicants of your school</p>
         </div>
     </div>
     <br><br>
 
 
-    <div class="col-sm-4">
+    <!--<div class="col-sm-4">
         <span class="glyphicon glyphicon-wrench"></span>
-        <h4>Contact</h4>
+        <h4>HELP</h4>
         <p></p>
-    </div>
+    </div>-->
 </div>
 
 
