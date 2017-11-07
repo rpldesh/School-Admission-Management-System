@@ -11,6 +11,7 @@
 
 class Login_Model extends Model
 {
+    private $user_id;
     private $username;
     private $pwd;
     private $user_type;
@@ -28,7 +29,7 @@ class Login_Model extends Model
     {
         $this->username = $_POST['u_name'];
         $this->pwd = $_POST['psw'];
-        $stmt = $this->db->prepare("SELECT user_type,user_status FROM login NATURAL JOIN users WHERE username = :username AND pwd = :pwd");
+        $stmt = $this->db->prepare("SELECT user_type,user_status,u_ID FROM login NATURAL JOIN users WHERE username = :username AND pwd = :pwd");
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $stmt->execute(array(
             ':username' => $this->username,
@@ -40,6 +41,7 @@ class Login_Model extends Model
             foreach ($result as $row){
                 $this->user_type = $row['user_type'];
                 $this->user_status = $row['user_status'];
+                $this->user_id = $row['u_ID'];
                 //echo htmlentities($key)."---".htmlentities($value);
 
             }
@@ -63,6 +65,7 @@ class Login_Model extends Model
 
     public function initLoginSession() {
         Session::init();
+        Session::set('user_id',$this->user_id);
         Session::set('username', $this->username);
         Session::set('user_type', $this->user_type);
         Session::set('loggedIn', true);

@@ -15,8 +15,7 @@
 <body>
 
 <div class="jumbotron">
-    <h1> School Name</h1>
-    <h4>Grade Entry Management system</h4>
+    <h3>Grade Entry Management system</h3>
 </div>
 <!-------------    Navigation Bar  ------------>
 <nav class="navbar navbar-inverse navbarmod">
@@ -27,7 +26,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="logIn.html">SCHOOL ADMISSIONS</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -54,7 +52,7 @@
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
             <a href="" ><h4 class="logo-small">List of schools</h4></a>
-            <p>view avalable schools</p>
+            <p>View details of schools</p>
             <br />
         </div>
         <div class="col-sm-4">
