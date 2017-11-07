@@ -16,9 +16,9 @@ class Login_Model extends Model
     private $user_type;
     private $user_status;
 
-    public function __construct()
+    public function __construct($user_type)
     {
-        parent::__construct();
+        parent::__construct($user_type);
         /*echo "Anuradha  ";
         echo Hash::create('md5', "Anuradha",HASH_PASSWORD_KEY).'<br />';
         */
@@ -47,9 +47,9 @@ class Login_Model extends Model
                 $this->initLoginSession();
 
                 if ($_SESSION['user_type'] == 'interviewer' || $_SESSION['user_type'] == 'principal' || $_SESSION['user_type'] == 'inserter') {
-                    //header('location: ../schoolHome');
+                    header('location: ../schoolHome');
                 } else if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'clerk') {
-                    //header('location: ../ministryHome');
+                    header('location: ../ministryHome');
                 }
             } else {
                 $message = "Sorry, your account has been deactivated\\nActive your account and try again";

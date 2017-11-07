@@ -11,9 +11,9 @@ class SchoolHome_model extends Model
     private $user_type;
     private $school_name;
 
-    public function __construct()
+    public function __construct($user_type)
     {
-        parent::__construct();
+        parent::__construct($user_type);
         Session::init();
         $logged = Session::get('loggedIn');
         if ($logged==false){
