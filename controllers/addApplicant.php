@@ -3,21 +3,20 @@
 /**
  * Created by PhpStorm.
  * User: DiniX
- * Date: 07-Nov-17
- * Time: 12:02 PM
+ * Date: 08-Nov-17
+ * Time: 3:48 AM
  */
-class MinistryHome extends Controller
+class AddApplicant extends Controller
 {
     function __construct()
     {
         parent::__construct();
     }
     function index(){
-        $this->view-> render('ministryHome/index');
+        $this->view-> render('addApplicant/index');
     }
-
     function addApplicant()
     {
-        $this->model->addSchool();
+        $this->model->addApplicant();
     }
 }

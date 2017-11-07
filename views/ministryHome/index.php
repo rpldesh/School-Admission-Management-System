@@ -45,8 +45,8 @@
     <div class="row">
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-file"></span>
-            <a href=""><h4 class="logo-small">Application</h4></a>
-            <p>apply for school</p>
+            <a href="ministryHome/addSchool"><h4 class="logo-small">Add school</h4></a>
+            <p>Add details of schools</p>
         </div>
 
         <div class="col-sm-4">
@@ -57,19 +57,14 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""> <h4 class="logo-small">Results</h4></a>
-            <p>View results of schools</p>
+            <a href=""> <h4 class="logo-small">Qualified lists of schools</h4></a>
+            <p>View qualification results of schools</p>
         </div>
         <br />
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
             <a href=""><h4 class="logo-small">Add Staff</h4></a>
-            <p>add staff members</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">View school details</h4></a>
-            <p></p>
+            <p>Add new members accounts for the system</p>
         </div>
     </div>
     <br><br>

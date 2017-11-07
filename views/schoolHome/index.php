@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-file"></span>
-            <a href=""><h4 class="logo-small">Enter Applicant Data</h4></a>
+            <a href="addApplicant/addApplicant"><h4 class="logo-small">Enter Applicant Data</h4></a>
             <p>Enter details of applicants of your school</p>
         </div>
 
@@ -56,8 +56,8 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">Add Staff</h4></a>
-            <p>Add new members accounts for the system</p>
+            <a href=""><h4 class="logo-small">Add Students</h4></a>
+            <p>Add new students to the school</p>
         </div>
         <br />
         <div class="col-sm-4">
@@ -69,6 +69,11 @@
             <span class="glyphicon glyphicon-list-alt"></span>
             <a href=""><h4 class="logo-small">Results</h4></a>
             <p>View final results for applicants of your school</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href=""><h4 class="logo-small">Add Staff</h4></a>
+            <p>Add new members accounts for the system</p>
         </div>
     </div>
     <br><br>

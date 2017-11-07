@@ -5,7 +5,7 @@
 <body>
 <div class="container">
 
-    <form action="applicant/addApplicant" method="post" id="signup">
+    <form action="addApplicant/addApplicant" method="post" id="signup">
 
         <div class="header">
 
