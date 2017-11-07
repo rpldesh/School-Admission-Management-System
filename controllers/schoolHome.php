@@ -15,4 +15,8 @@ class SchoolHome extends Controller
     function index(){
         $this->view-> render('schoolHome/index');
     }
+    function addApplicant()
+    {
+        $this->model->addApplicant();
+    }
 }

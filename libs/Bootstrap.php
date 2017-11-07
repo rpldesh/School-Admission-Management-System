@@ -3,12 +3,12 @@
 class Bootstrap {
 
     function __construct() {
+        Session::init();
         if (isset($_GET['url'])){
             $url=$_GET['url'];
         }else{
             $url=null;
         }
-        print_r ($url);
         //$url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
 
@@ -21,12 +21,10 @@ class Bootstrap {
 
             return false;
         }
-        print_r ($url);
 
         $file = 'controllers/' . $url[0] . '.php';
         if (file_exists($file)) {
             require_once $file;
-            echo $file. "exits". $url[0];
         } else {
             require 'controllers/error.php';
             $controller = new Error();
@@ -34,10 +32,14 @@ class Bootstrap {
             return false;
         }
 
+        if(isset($_SESSION['user_type'])){
+            $user_type =  Session::get('user_type');
+        }else{
+            $user_type = 'root';
+        }
 
         $controller = new $url[0];
-        $controller->loadModel($url[0]);
-        echo "just load the model";
+        $controller->loadModel($url[0],$user_type);
 
 
         if (isset($url[2])) {
@@ -50,7 +52,6 @@ class Bootstrap {
         } else {
             if (isset($url[1])) {
                 if (method_exists($controller, $url[1])) {
-                    echo "Login Do method";
                     $controller->{$url[1]}();
                 } else {
                     $this->error();

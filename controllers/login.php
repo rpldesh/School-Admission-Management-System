@@ -19,7 +19,4 @@ class login extends Controller
     {
         $this->model->loginDo();
     }
-
-
-
 }
