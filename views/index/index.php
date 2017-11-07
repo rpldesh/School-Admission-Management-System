@@ -8,29 +8,42 @@
 <link href="<?php echo URL?>public/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="<?php echo URL?>public/css/animate.css" rel="stylesheet">
 <link href="<?php echo URL?>public/css/landing.css" rel="stylesheet">
+<link href="<?php echo URL?>/public/css/login.css" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="row vertical-center-row">
-    <div class="col-md-12">
-        <h1 class="animated fadeIn heading " id="div1">Welcome Ministry Of Education</h1>
-    </div>
+<div class="container">
+
+    <form id="signup" action=login/loginDo method="post">
+
+        <div class="header">
+
+            <h3>LOGIN</h3>
+
+            <p>You want to fill out this form</p>
+
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="inputs">
+            <label for="u_name"><b>Username</b></label><br />
+            <input name="u_name" type="text" placeholder=" Enter Username" autofocus />
+            <label for="psw"><b>Password</b></label><br />
+            <input name="psw" type="password" placeholder=" Enter Password" autofocus />
+
+            <lable></lable><input type="submit"/>
+
+
+        </div>
+
+    </form>
+
 </div>
-<div class="row" style="text-align:center">
-    <div class="animated fadeIn">
-        <button type="button" class="btn btn-primary btn-lg" style="Margin-right:50px">School </button>
-        <button type="button" class="btn btn-primary btn-lg">Ministry </button>
-    </div>
-</div>
 
-
-
-
-
-
+<br />
 <script src="<?php echo URL?>public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="<?php echo URL?>public/js/bootstrap.min.js" type="text/javascript"></script>
-
-
 
 </body>

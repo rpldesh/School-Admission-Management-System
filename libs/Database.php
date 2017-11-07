@@ -45,5 +45,9 @@ class Database extends PDO
         $stmt->execute();
 
     }
+    public function select($table,$fields,$where){
+        $stmt=$this->db->prepare("SELECT $fields FROM $table WHERE $where");
+        $stmt->execute();
+    }
 }
 ?>
