@@ -29,8 +29,6 @@ class Database extends PDO
             echo "********".$value;
         }
         $stmt->execute();
-        //echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
-        echo "success";
     }
     public function update($table,$data,$where){
         ksort($data);
