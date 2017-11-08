@@ -20,11 +20,16 @@ class AddSchool_Model extends Model
             'city'=>$_POST['city'],
             'district'=>$_POST['district'],
             'number_of_vacancies'=>$_POST['vacancies']);
-        $this->db->insert('school',$schoolData);
-        ?>
-        <style>div.alert{display:inline-block;}</style>
-        <?php
-        ;
+
+        try {
+            $this->db->insert('school',$schoolData);
+            ?>
+            <style>div.alert{display:inline-block;}</style>
+            <?php
+        } catch (PDOException $e) {
+            $message = "Your user type does not have privilege to insert new schools ";
+            echo "<script type = 'text/javascript' > alert('$message');window . location = \"../index\";</script>";
+        }
     }
 }
 ?>

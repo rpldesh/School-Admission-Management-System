@@ -10,8 +10,7 @@ class Database extends PDO
 {
     function __construct($DB_TYPE,$DB_HOST,$DB_NAME,$DB_USER,$DB_PASS)
     {
-        parent::__construct($DB_TYPE . ':host=' . $DB_HOST .
-            ';dbname=' . $DB_NAME, $DB_USER, $DB_PASS);
+        parent::__construct($DB_TYPE . ':host=' . $DB_HOST . ';dbname=' . $DB_NAME, $DB_USER, $DB_PASS);
     }
 
     /**
@@ -22,13 +21,13 @@ class Database extends PDO
         ksort($data);
         $fieldNames=implode('`,`', array_keys($data));
         $fieldValues=':'.implode(', :', array_keys($data));
-        echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
         $stmt= $this->prepare("INSERT into $table (`$fieldNames`) VALUES ($fieldValues)");
         foreach ($data as $key=>$value){
             $stmt->bindValue(":$key",$value);
         }
         $stmt->execute();
     }
+
     public function update($table,$data,$where){
         ksort($data);
         $fieldDetails=null;
@@ -41,6 +40,7 @@ class Database extends PDO
             $stmt->bindValue(":$key ",$value);
         }
         $stmt->execute();
+
 
     }
     public function select($table,$fields,$where){

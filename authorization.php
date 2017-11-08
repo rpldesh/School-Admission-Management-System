@@ -19,5 +19,6 @@ $db->query("GRANT SELECT, INSERT, UPDATE ON *.* TO 'principal'@'%localhost' ");
 $db->query("GRANT SELECT, INSERT, UPDATE ON *.* TO 'interviewer'@'%localhost' ");
 $db->query("GRANT SELECT, INSERT, UPDATE ON *.* TO 'inserter'@'%localhost' ");
 $db->query("GRANT SELECT, INSERT, UPDATE ON *.* TO 'admin'@'%localhost' ");
-$db->query("GRANT SELECT, INSERT, UPDATE ON *.* TO 'clerk'@'%localhost' ");
+$db->query("REVOKE ALL PRIVILEGES ON *.* FROM 'clerk'@'%localhost'");
+$db->query("GRANT SELECT ON *.* TO 'clerk'@'%localhost' ");
 ?>

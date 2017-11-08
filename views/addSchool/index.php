@@ -46,7 +46,7 @@
                 <option value="Puttalam" >Puttalam</option><option value="Rathnapura" >Rathnapura</option><option value="Trincomalee" >Trincomalee</option>
                 <option value="Vavuniya" >Vavuniya</option></select>
             <label for="vacancies"><b>No. of Vacancies</b></label><br />
-            <input name="vacancies" type="text" placeholder="No. of vacancies" autofocus />
+            <input name="vacancies" type="text" placeholder="No. of vacancies" autofocus required/>
             <input id="submit" type="submit"/>
         </div>
 
