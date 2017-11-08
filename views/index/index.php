@@ -4,12 +4,12 @@
 <meta http-equiv="X-UA-Compatible" content="ID=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="<?php echo URL?>public/css/bootstrap.min.css" rel="stylesheet">
+
 <link href="<?php echo URL?>public/css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="<?php echo URL?>public/css/animate.css" rel="stylesheet">
 <link href="<?php echo URL?>public/css/landing.css" rel="stylesheet">
 <link href="<?php echo URL?>/public/css/login.css" rel="stylesheet">
-</head>
+<style> footer{ position: absolute; right: 0; bottom: 0; left: 0;}</style></head>
 
 <body>
 
@@ -20,7 +20,6 @@
         <div class="header">
 
             <h3>LOGIN</h3>
-
             <p>You want to fill out this form</p>
 
         </div>
