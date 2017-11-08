@@ -32,9 +32,10 @@ class AddApplicant_Model extends Model
         $this->db->insert('applicant',$applicantData);
 
 
-        $std_ID="";
-        $reference_type="";
+
         if (isset($_POST['parent_ref']) || isset($_POST['sibling_ref'])){
+            $std_ID=null;
+            $reference_type=null;
             if(isset($_POST['parent_ref'])){
                 $std_ID=$_POST['parent_ref'];
                 $reference_type="parent";
@@ -43,16 +44,19 @@ class AddApplicant_Model extends Model
                 $reference_type="sibling";
 
             }
+
             $referData=array('application_ID'=>$_POST['application_ID'],'std_ID'=>$std_ID,'reference_type'=>$reference_type);
             $this->db->insert('refer',$referData);
         }
 
-        $stmt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE user_ID=:user_ID");
+
+        $stmt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID=:u_ID");
         $stmt->execute(array(
-            ':user_ID' => $this->user_ID));
+            ':u_ID' => $this->user_ID));
 
         $count = $stmt->rowCount();
         if ($count > 0) {
+            echo "countttttttt".$count;
             $result = $stmt->fetchAll();
             foreach ($result as $row){
                 $this->sch_ID = $row['sch_ID'];

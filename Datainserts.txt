@@ -22,3 +22,8 @@ insert into users (`u_ID`,`user_type`,`first_name`,`last_name`,`street_no`,`stre
 (8,'inserter','Sunil','Perera','45/55','Ananda Mawatha','Gampaha','active'),
 (9,'interviewer','Sanath','Weerakody','No.65','Ihalgama Rd','Gampaha','active'),
 (10,'clerk','Lalitha','Samaraweera','No.78/85','Meri Biso Rd','Colombo','active')
+
+insert into school_staff (`u_ID`,`sch_ID`,`user_type`) values
+(1,11,'principal'),
+(2,22,'interviewer'),
+(3,33,'inserter')

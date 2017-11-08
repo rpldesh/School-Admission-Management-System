@@ -29,8 +29,8 @@
             <label for="App_gender"><b>Gender</b></label><br />
             <select id="App_gender" name="gender" required><br />
                 <option value="Male" >Male</option><option value="Female" >Female</option></select>
-            <label for="dob"><b>Date Of Birth</b></label><br />
-            <input name="dob" type="date" required/><br />
+            <label for="DOB"><b>Date Of Birth</b></label><br />
+            <input id="DOB" name="dob" type="date" required/><br />
             <label for="mother_fName"><b>Mother's First Name</b></label><br />
             <input name="mother_fName" type="text" placeholder="First Name of Mother" autofocus />
             <label for="mother_LName"><b>Mother's Last Name</b></label><br />
@@ -50,7 +50,7 @@
             <label for="state_emp_ref"><b>State employee reference</b></label><br />
             <input name="state_emp_ref" type="text" placeholder="state employee reference" autofocus />
             <label for="parent_ref"><b>Parent Reference</b></label><br />
-            <input name="parent_ref" type="text" placeholder="Enter parent's student Id" autofocus />
+            <input name="parent_ref" type="text" placeholder="Enter Parent's Student Id" autofocus />
             <label for="sibling_ref"><b>Siblin Reference</b></label><br />
             <input name="sibling_ref" type="text" placeholder="Enter Sibling's Student Id" autofocus />
 
