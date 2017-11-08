@@ -42,6 +42,9 @@ class Login_Model extends Model
                 $this->user_type = $row['user_type'];
                 $this->user_status = $row['user_status'];
                 $this->user_id = $row['u_ID'];
+
+                echo $this->user_id;
+
                 //echo htmlentities($key)."---".htmlentities($value);
 
             }
