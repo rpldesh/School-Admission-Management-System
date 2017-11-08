@@ -21,6 +21,10 @@ class AddSchool_Model extends Model
             'district'=>$_POST['district'],
             'number_of_vacancies'=>$_POST['vacancies']);
         $this->db->insert('school',$schoolData);
-        echo "Succes";
+        ?>
+        <style>div.alert{display:inline-block;}</style>
+        <?php
+        ;
     }
 }
+?>

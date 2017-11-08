@@ -1,0 +1,33 @@
+/* The alert message box */
+.alert {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    padding: 13px 10px;
+    width: 330px;
+    margin-bottom: 20px;
+    box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
+    clear: both;
+    /*padding: 20px;*/
+    background-color: #baab9a; /* Red */
+    color: white;
+    /*margin-bottom: 15px;*/
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: black;
+}
