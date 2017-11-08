@@ -1,22 +1,9 @@
-
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-<meta chartset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="ID=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>School Page</title>
-<link href="<?php echo URL ?>public/css/bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo URL ?>public/css/bootstrap-theme.min.css" rel="stylesheet">
-
-<link href="<?php echo URL ?>public/css/homePage.css" rel="stylesheet">
-
+<head>
+    <style> footer{ position: absolute; right: 0; bottom: 0; left: 0;}</style>
 </head>
 
 <body>
 
-<div class="jumbotron">
-    <h3>Grade Entry Management system</h3>
-</div>
 <!-------------    Navigation Bar  ------------>
 <nav class="navbar navbar-inverse navbarmod">
     <div class="container-fluid">
@@ -51,7 +38,7 @@
 
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href="" ><h4 class="logo-small">List of schools</h4></a>
+            <a href="showSchool/index" ><h4 class="logo-small">List of schools</h4></a>
             <p>View details of schools</p>
             <br />
         </div>
