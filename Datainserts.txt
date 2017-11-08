@@ -1,3 +1,15 @@
+insert into `users` (`u_ID`,`user_type`,`first_name`,`last_name`,`street_no`,`streat_name`,`city`,`user_status`) values
+('1','principal','Anuradha','Karunarathna','19/11','Kurulu Vimana','Bemmulla','active'),
+('2','interviewer','Dinika','Senarath','11','Weragoda','Pallewela','active'),
+('3','inserter','Shalika','Ariyasinghe','7','Hasitha Mawatha','Bemmulla','active'),
+('4','admin','Lakshitha','Rajapakse','102','Parakrama Mawatha','Yakkala','active'),
+('5','clerk','Nimal','Munasinghe','122','Rawathawaththa','Moratuwa','active'),
+('6','interviewer','Kamal','Adikari','No.12/15','Vishaka Rd','Veyangoda','restricted'),
+('7','inserter','Amal','Fernando','No.12','Gajaba Rd','Gampaha','restricted'),
+('8','inserter','Sunil','Perera','45/55','Ananda Mawatha','Gampaha','active'),
+('9','interviewer','Sanath','Weerakody','No.65','Ihalgama Rd','Gampaha','active'),
+('10','clerk','Lalitha','Samaraweera','No.78/85','Meri Biso Rd','Colombo','active');
+
 insert into `login` (`username`,`pwd`,`u_ID`) values
 ('Anuradha','88001f7d0a06ad8130985dcc39b93c72','1'),
 ('Dinika','dc04f036d01eab688df423cc81516c38','2'),
@@ -8,17 +20,28 @@ insert into `login` (`username`,`pwd`,`u_ID`) values
 ('Amal','2258fb7cae0d49ab91ba3682cc94b78d','7'),
 ('Sunil','81c53cec8a5f5c0e9c32bae3e2fde184','8'),
 ('Sanath','4ff0b8fe5ad4e7a9f4a59ec09ef5550e','9'),
-('Lalitha','d470af65b97c1a3be6a638cb722107d1','10')
+('Lalitha','d470af65b97c1a3be6a638cb722107d1','10');
 
 
-insert into users (`u_ID`,`user_type`,`first_name`,`last_name`,`street_no`,`streat_name`,`city`,`user_status`) values
-(1,'principal','Anuradha','Karunarathna','19/11','Kurulu Vimana','Bemmulla','active'),
-(2,'interviewer','Dinika','Senarath','11','Weragoda','Pallewela','active'),
-(3,'inserter','Shalika','Ariyasinghe','7','Hasitha Mawatha','Bemmulla','active'),
-(4,'admin','Lakshitha','Rajapakse','102','Parakrama Mawatha','Yakkala','active'),
-(5,'clerk','Nimal','Munasinghe','122','Rawathawaththa','Moratuwa','active'),
-(6,'interviewer','Kamal','Adikari','No.12/15','Vishaka Rd','Veyangoda','restricted'),
-(7,'inserter','Amal','Fernando','No.12','Gajaba Rd','Gampaha','restricted'),
-(8,'inserter','Sunil','Perera','45/55','Ananda Mawatha','Gampaha','active'),
-(9,'interviewer','Sanath','Weerakody','No.65','Ihalgama Rd','Gampaha','active'),
-(10,'clerk','Lalitha','Samaraweera','No.78/85','Meri Biso Rd','Colombo','active')
+insert into `student`(`std_ID`,`first_name`,`mid_name`,`last_name`,`gender`,`DoB`,`street_no`,`street_name`,`city`,`district`,`achievements`) values
+('1/001','Hiruni','Yasara','Senarath','female','1996-10-05','no9','weeregoda','Pallewela','Gampaha','chess champion'),
+('2/001','Thisara','','Karunathilaka','male','1993-07-07','7','Temple Rd','Wadurawa','Gampaha','Singing champion'),
+('2/002','Dilsha','Nirmani','Karunathilaka','female','1995-08-08','No.14','Temple Rd','Veyanoda','Gampaha','Dancing champion'),
+('3/001','Radeeka','Madushani','Ariyasinghe','female','1990-04-02','No.7','Shoba','Bemmulla','Gampaha','Art champion');
+
+insert into `school`(`sch_ID`,`sch_name`,`street_no`,`street_name`,`city`,`district`,`number_of_vacancies`) values
+('0001','Sri Bodhi Vidyalaya','No.122','Sri Bodhi Rd','Gampaha','Gampaha','198'),
+('0002','Bandarawaththa Parakrama Vidyalaya','','Bandarawaththa Rd','Gampaha','Gampaha','198'),
+('003','Gothami Vidyalaya','','Oruthota Rd','Gampaha','Gampaha','165'),
+('004','Pitiyagedara Primary School','','Mahawita Rd','Bemmulla','Gampaha','100'),
+('005','Vidyaloka Maha Vidyalaya','','Guru Vidyala Rd','Veyangoda','Gampaha','132');
+
+insert into `school_staff`(`u_ID`,`sch_ID`,`user_type`) values
+('1','0001','principal'),
+('2','0001','interviewer'),
+('3','001','inserter'),
+('8','003','inserter'),
+('9','004','interviewer');
+
+
+

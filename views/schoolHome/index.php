@@ -56,7 +56,7 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href="addStudent/addStudent"><h4 class="logo-small">Add Students</h4></a>
+            <a href="addStudent/index"><h4 class="logo-small">Add Students</h4></a>
             <p>Add new students to the school</p>
         </div>
         <br />

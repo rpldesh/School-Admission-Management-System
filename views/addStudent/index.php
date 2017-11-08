@@ -5,7 +5,7 @@
 <body>
 <div class="container">
 
-    <form action="applicant/addApplicant" method="post" id="signup">
+    <form action="addStudent/addStudent" method="post" id="signup">
 
         <div class="header">
 
@@ -30,9 +30,33 @@
             <select id="student_gender" name="gender" required><br />
                 <option value="Male" >Male</option><option value="Female" >Female</option></select>
             <label for="dob"><b>Date Of Birth</b></label><br />
-            <input name="date_of_add." type="date" required/><br />
-            <label for="date_of_add."><b>Date Of Admission</b></label><br />
             <input name="dob" type="date" required/><br />
+            <label for="land_phone"><b>Land Phone Number</b></label><br />
+            <input name="land_phone" type="text" placeholder=" Enter land phone number" autofocus />
+            <label for="mobile_phone1"><b>Mobile Phone Number1(Optional)</b></label><br />
+            <input name="mobile_phone1" type="text" placeholder=" Enter mobile phone number" autofocus />
+            <label for="mobile_phone2"><b>Mobile Phone Number2(Optional)</b></label><br />
+            <input name="mobile_phone2" type="text" placeholder=" Enter mobile phone number" autofocus />
+            <label for="street_no"><b>Street_no</b></label><br />
+            <input name="street_no" type="text" placeholder=" Enter Street_no" autofocus />
+            <label for="street_name"><b>Street_name</b></label><br />
+            <input name="street_name" type="text" placeholder=" Enter Street_name" autofocus />
+            <label for="city"><b>City</b></label><br />
+            <input name="city" type="text" placeholder=" Enter City" autofocus />
+            <label for="district"><b>District</b></label><br />
+            <select id="district" name="district" required><br />
+                <option value="Ampara" >Ampara</option><option value="Anuradhapura" >Anuradhapura</option><option value="Badulla" >Badulla</option>
+                <option value="Batticaloa" >Batticaloa</option><option value="Colombo" >Colombo</option><option value="Galle" >Galle</option>
+                <option value="Gampaha" >Gampaha</option><option value="Hambantota" >Hambantota</option><option value="Jaffna" >Jaffna</option>
+                <option value="Kalutara" >Kalutara</option><option value="Kandy" >Kandy</option><option value="Kegalle" >Kegalle</option>
+                <option value="Kilinochchi" >Kilinochchi</option><option value="Kurunegala" >Kurunegala</option><option value="Mannar" >Mannar</option>
+                <option value="Matale" >Matale</option><option value="Matara" >Matara</option><option value="Monaragala" >Monaragala</option>
+                <option value="Mullaitivu" >Mullaitivu</option><option value="Nuwara_Eliya" >Nuwara Eliya</option><option value="Polonnaruwa" >Polonnaruwa</option>
+                <option value="Puttalam" >Puttalam</option><option value="Rathnapura" >Rathnapura</option><option value="Trincomalee" >Trincomalee</option>
+                <option value="Vavuniya" >Vavuniya</option></select>
+            <label for="date_of_add."><b>Date Of Admission</b></label><br />
+            <input name="date_of_add." type="date" required/><br />
+            
 
 
 
