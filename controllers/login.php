@@ -12,9 +12,7 @@ class Login extends Controller
     {
         parent::__construct();
     }
-    function index(){
-        $this->view-> render('login/index');
-    }
+
     function loginDo()
     {
         $this->model->loginDo();
