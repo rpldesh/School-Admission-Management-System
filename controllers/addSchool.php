@@ -17,6 +17,7 @@ class AddSchool extends Controller
     }
     function addSchool()
     {
+        $this->index();
         $this->model->addSchool();
     }
 }

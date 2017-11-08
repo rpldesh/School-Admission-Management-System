@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-file"></span>
-            <a href="addApplicant/addApplicant"><h4 class="logo-small">Enter Applicant Data</h4></a>
+            <a href="addApplicant/index"><h4 class="logo-small">Enter Applicant Data</h4></a>
             <p>Enter details of applicants of your school</p>
         </div>
 
