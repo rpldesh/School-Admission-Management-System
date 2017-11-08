@@ -17,7 +17,7 @@ class AddApplicant_Model extends Model
         $this->user_ID = Session::get('user_ID');
     }
     public function addApplicant(){
-        $applicantData=array('appication_ID'=>$_POST['appication_ID'],'first_name'=>$_POST['app_f_name'],
+        $applicantData=array('application_ID'=>$_POST['application_ID'],'first_name'=>$_POST['app_f_name'],
             'mid_name'=>$_POST['app_m_name'],
             'last_name'=>$_POST['app_l_name'],
             'gender'=>$_POST['gender'],
@@ -43,7 +43,7 @@ class AddApplicant_Model extends Model
                 $reference_type="sibling";
 
             }
-            $referData=array('appication_ID'=>$_POST['appication_ID'],'std_ID'=>$std_ID,'reference_type'=>$reference_type);
+            $referData=array('application_ID'=>$_POST['application_ID'],'std_ID'=>$std_ID,'reference_type'=>$reference_type);
             $this->db->insert('refer',$referData);
         }
 
@@ -57,7 +57,7 @@ class AddApplicant_Model extends Model
             foreach ($result as $row){
                 $this->sch_ID = $row['sch_ID'];
 
-                $applyData=array('application_ID'=>$_POST['appication_ID'],'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$_POST['distanceToSchl'],'academic_staff_ref'=>$_POST['academic_staff_ref'],'state_emp_ref'=>$_POST['state_emp_ref']);
+                $applyData=array('application_ID'=>$_POST['application_ID'],'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$_POST['distanceToSchl'],'academic_staff_ref'=>$_POST['academic_staff_ref'],'state_emp_ref'=>$_POST['state_emp_ref']);
                 $this->db->insert('apply',$applyData);
 
             }
