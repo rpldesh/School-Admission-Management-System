@@ -22,11 +22,10 @@ class Database extends PDO
         ksort($data);
         $fieldNames=implode('`,`', array_keys($data));
         $fieldValues=':'.implode(', :', array_keys($data));
-        echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
+        //echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
         $stmt= $this->prepare("INSERT into $table (`$fieldNames`) VALUES ($fieldValues)");
         foreach ($data as $key=>$value){
             $stmt->bindValue(":$key",$value);
-            echo "********".$value;
         }
         $stmt->execute();
     }

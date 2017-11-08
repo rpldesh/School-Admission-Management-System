@@ -44,14 +44,14 @@
             <label for="guardian_LName"><b>Guardian's Last Name</b></label><br />
             <input name="guardian_LName" type="text" placeholder="Last Name of Guardian" autofocus />
             <label for="distanceToSchl"><b>Distance to School</b></label><br />
-            <input name="distanceToSchl" type="text" placeholder="Distance to School" autofocus />
+            <input name="distanceToSchl" type="text" placeholder="To nearest two decimal places in km" autofocus />
             <label for="academic_staff_ref"><b>Academic Staff references</b></label><br />
             <input name="academic_staff_ref" type="text" placeholder="Academic Staff references" autofocus />
             <label for="state_emp_ref"><b>State employee reference</b></label><br />
             <input name="state_emp_ref" type="text" placeholder="state employee reference" autofocus />
             <label for="parent_ref"><b>Parent Reference</b></label><br />
             <input name="parent_ref" type="text" placeholder="Enter Parent's Student Id" autofocus />
-            <label for="sibling_ref"><b>Siblin Reference</b></label><br />
+            <label for="sibling_ref"><b>Sibling Reference</b></label><br />
             <input name="sibling_ref" type="text" placeholder="Enter Sibling's Student Id" autofocus />
 
 
