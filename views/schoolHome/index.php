@@ -1,22 +1,5 @@
-
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" >
-    <meta chartset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ID=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>School Page</title>
-    <link href="<?php echo URL ?>public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php echo URL ?>public/css/bootstrap-theme.min.css" rel="stylesheet">
-
-    <link href="<?php echo URL ?>public/css/homePage.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-<div class="jumbotron">
-    <h3>Grade Entry Management system</h3>
-</div>
+<head><style> footer{ position: absolute; right: 0; bottom: 0; left: 0;}</style></head>
+<title>School Home</title>
 <!-------------    Navigation Bar  ------------>
 <nav class="navbar navbar-inverse navbarmod">
     <div class="container-fluid">
@@ -92,6 +75,3 @@
 <script src="<?php echo URL ?>public/js/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="<?php echo URL ?>public/js/bootstrap.min.js" type="text/javascript"></script>
 
-</body>
-
-</html>

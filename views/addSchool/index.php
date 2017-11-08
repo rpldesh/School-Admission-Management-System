@@ -1,6 +1,8 @@
 
 <title>Title</title>
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
+<link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
+<style> div.alert{display: none;}</style>
 </head>
 <body>
 <div class="container">
@@ -17,6 +19,10 @@
 
         <div class="sep"></div>
 
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            School added successfully
+        </div>
         <div class="inputs">
             <label for="sch_ID"><b>School ID</b></label><br />
             <input name="sch_ID" type="text" placeholder=" Enter School ID" autofocus />
@@ -40,9 +46,8 @@
                 <option value="Puttalam" >Puttalam</option><option value="Rathnapura" >Rathnapura</option><option value="Trincomalee" >Trincomalee</option>
                 <option value="Vavuniya" >Vavuniya</option></select>
             <label for="vacancies"><b>No. of Vacancies</b></label><br />
-            <input name="vacancies" type="text" placeholder="No. of vacancies" autofocus />
+            <input name="vacancies" type="text" placeholder="No. of vacancies" autofocus required/>
             <input id="submit" type="submit"/>
-
         </div>
 
     </form>
