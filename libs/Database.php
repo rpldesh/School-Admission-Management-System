@@ -23,13 +23,13 @@ class Database extends PDO
         $fieldNames=implode('`,`', array_keys($data));
         $fieldValues=':'.implode(', :', array_keys($data));
         echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
-        die;
-
-        $stmt= $this->db->prepare("INSERT into $table (`$fieldNames`) VALUES ($fieldValues)");
+        $stmt= $this->prepare("INSERT into $table (`$fieldNames`) VALUES ($fieldValues)");
         foreach ($data as $key=>$value){
             $stmt->bindValue(":$key",$value);
         }
         $stmt->execute();
+        echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
+        echo "success";
     }
     public function update($table,$data,$where){
         ksort($data);
@@ -38,7 +38,7 @@ class Database extends PDO
               $fieldDetails.="`$key`=:$key, ";
         }
 
-        $stmt=$this->db->prepare("UPDATE $table SET $fieldDetails WHERE $where");
+        $stmt=$this->prepare("UPDATE $table SET $fieldDetails WHERE $where");
         foreach ($data as $key=>$value){
             $stmt->bindValue(":$key ",$value);
         }
@@ -46,7 +46,7 @@ class Database extends PDO
 
     }
     public function select($table,$fields,$where){
-        $stmt=$this->db->prepare("SELECT $fields FROM $table WHERE $where");
+        $stmt=$this->prepare("SELECT $fields FROM $table WHERE $where");
         $stmt->execute();
     }
 }

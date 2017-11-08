@@ -19,7 +19,7 @@ class AddSchool_Model extends Model
             'street_name'=>$_POST['street_name'],
             'city'=>$_POST['city'],
             'district'=>$_POST['district'],
-            'no_of_vacancies'=>$_POST['no_of_vacancies']);
+            'number_of_vacancies'=>$_POST['vacancies']);
         $this->db->insert('school',$schoolData);
     }
 }
