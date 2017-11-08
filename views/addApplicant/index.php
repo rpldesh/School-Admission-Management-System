@@ -27,7 +27,7 @@
             <label for="app_l_name"><b>Applicant's Last Name</b></label><br />
             <input name="app_l_name" type="text" placeholder="Last Name" autofocus />
             <label for="App_gender"><b>Gender</b></label><br />
-            <select id="App_gender" name="gender" required><br />
+            <select id="App_gender" name="gender" required>
                 <option value="Male" >Male</option><option value="Female" >Female</option></select>
             <label for="DOB"><b>Date Of Birth</b></label><br />
             <input id="DOB" name="dob" type="date" required/><br />
