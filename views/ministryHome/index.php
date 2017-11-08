@@ -45,7 +45,7 @@
     <div class="row">
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-file"></span>
-            <a href="ministryHome/addSchool"><h4 class="logo-small">Add school</h4></a>
+            <a href="addSchool/index"><h4 class="logo-small">Add school</h4></a>
             <p>Add details of schools</p>
         </div>
 
