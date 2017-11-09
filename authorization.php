@@ -9,7 +9,7 @@ include "libs/Database.php";
 include "config.php";
 $db=new Database(DB_TYPE,DB_HOST,DB_NAME,'root',DB_PASS);
 
-$db->query("DELETE FROM USER");
+//$db->query("DELETE FROM USER");
 $db->query("CREATE USER 'principal'@'%localhost' IDENTIFIED by ''");
 $db->query("CREATE USER 'interviewer'@'%localhost' IDENTIFIED by ''");
 $db->query("CREATE USER 'inserter'@'%localhost' IDENTIFIED by ''");

@@ -17,6 +17,7 @@ class AddApplicant extends Controller
     }
     function addApplicant()
     {
+        $this->index();
         $this->model->addApplicant();
     }
 }

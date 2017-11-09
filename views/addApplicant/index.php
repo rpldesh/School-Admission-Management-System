@@ -1,6 +1,8 @@
 
 <title>Title</title>
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
+<link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
+<style> div.alert{display: none;}</style>
 </head>
 <body>
 <div class="container">
@@ -16,7 +18,10 @@
         </div>
 
         <div class="sep"></div>
-
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Applicant is added successfully
+        </div>
         <div class="inputs">
             <label for="application_ID"><b>Application ID</b></label><br />
             <input name="application_ID" type="text" placeholder=" Enter Application ID" autofocus />
