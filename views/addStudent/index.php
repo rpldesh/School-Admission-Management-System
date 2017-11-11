@@ -27,7 +27,7 @@
             <label for="student_l_name"><b>Student's Last Name</b></label><br />
             <input name="student_l_name" type="text" placeholder="Last Name" autofocus />
             <label for="student_gender"><b>Gender</b></label><br />
-            <select id="student_gender" name="gender" required><br />
+            <select id="student_gender" name="gender" required>
                 <option value="Male" >Male</option><option value="Female" >Female</option></select>
             <label for="dob"><b>Date Of Birth</b></label><br />
             <input name="dob" type="date" required/><br />
@@ -44,7 +44,7 @@
             <label for="city"><b>City</b></label><br />
             <input name="city" type="text" placeholder=" Enter City" autofocus />
             <label for="district"><b>District</b></label><br />
-            <select id="district" name="district" required><br />
+            <select id="district" name="district" required>
                 <option value="Ampara" >Ampara</option><option value="Anuradhapura" >Anuradhapura</option><option value="Badulla" >Badulla</option>
                 <option value="Batticaloa" >Batticaloa</option><option value="Colombo" >Colombo</option><option value="Galle" >Galle</option>
                 <option value="Gampaha" >Gampaha</option><option value="Hambantota" >Hambantota</option><option value="Jaffna" >Jaffna</option>
@@ -54,8 +54,8 @@
                 <option value="Mullaitivu" >Mullaitivu</option><option value="Nuwara_Eliya" >Nuwara Eliya</option><option value="Polonnaruwa" >Polonnaruwa</option>
                 <option value="Puttalam" >Puttalam</option><option value="Rathnapura" >Rathnapura</option><option value="Trincomalee" >Trincomalee</option>
                 <option value="Vavuniya" >Vavuniya</option></select>
-            <label for="date_of_add."><b>Date Of Admission</b></label><br />
-            <input name="date_of_add." type="date" required/><br />
+            <label for="date_of_add"><b>Date Of Admission</b></label><br />
+            <input name="date_of_add" type="date" required/><br />
             
 
 

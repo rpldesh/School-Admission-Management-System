@@ -24,7 +24,10 @@ class Database extends PDO
         $stmt= $this->prepare("INSERT into $table (`$fieldNames`) VALUES ($fieldValues)");
         foreach ($data as $key=>$value){
             $stmt->bindValue(":$key",$value);
+
         }
+        //print_r($data);
+        //echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
         $stmt->execute();
     }
 
