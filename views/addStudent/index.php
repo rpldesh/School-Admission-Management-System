@@ -1,6 +1,8 @@
 
 <title>addStudent</title>
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
+<link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
+<style> div.alert{display: none;}</style>
 </head>
 <body>
 <div class="container">
@@ -16,6 +18,11 @@
         </div>
 
         <div class="sep"></div>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+
+            Student is added successfully
+        </div>
 
         <div class="inputs">
             <label for="student_ID"><b>Student ID</b></label><br />

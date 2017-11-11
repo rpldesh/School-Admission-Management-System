@@ -78,6 +78,10 @@ class AddStudent_Model extends Model
                     'state'=>'active'
                 );
                 $this->db->insert('attend',$admissionData);
+                ?>
+                <style>div.alert{display:inline-block;}</style>
+
+                <?php
             }
            
         }
@@ -86,3 +90,4 @@ class AddStudent_Model extends Model
 
 
 }
+?>

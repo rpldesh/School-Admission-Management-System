@@ -21,7 +21,7 @@
 
         <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            School added successfully
+            School is added successfully
         </div>
         <div class="inputs">
             <label for="sch_ID"><b>School ID</b></label><br />

@@ -64,10 +64,13 @@ class AddApplicant_Model extends Model
                 ':std_ID' => $parent_ref));
             $count1 = $parentStmt->rowCount();
             if ($count1 > 0) {
-                $referData = array('application_ID' => $application_ID, 'std_ID' => $std_ID, 'reference_type' => $reference_type);
-                $this->db->insert('refer', $referData);
-            } else {
-                echo "Student ID doesn't Exist";
+
+                $referData=array('application_ID'=>$application_ID,'std_ID'=>$std_ID,'reference_type'=>$reference_type);
+                $this->db->insert('refer',$referData);
+            }else{
+                $message = "Student ID doesn't exist";
+                echo "<script type = 'text/javascript' > alert('$message');window . location = \"../index\";</script>";
+
             }
 
         }
@@ -79,10 +82,13 @@ class AddApplicant_Model extends Model
                 ':std_ID' => $sibling_ref));
             $count2 = $siblingStmt->rowCount();
             if ($count2 > 0) {
-                $referData = array('application_ID' => $application_ID, 'std_ID' => $std_ID, 'reference_type' => $reference_type);
-                $this->db->insert('refer', $referData);
-            } else {
-                echo "Student ID doesn't Exist";
+
+                $referData=array('application_ID'=>$application_ID,'std_ID'=>$std_ID,'reference_type'=>$reference_type);
+                $this->db->insert('refer',$referData);
+            }else{
+                $message = "Student ID doesn't exist";
+                echo "<script type = 'text/javascript' > alert('$message');window . location = \"../index\";</script>";
+
             }
 
 
@@ -97,12 +103,12 @@ class AddApplicant_Model extends Model
             foreach ($result as $row) {
                 $this->sch_ID = $row['sch_ID'];
 
-                $applyData = array('application_ID' => $application_ID, 'sch_ID' => $this->sch_ID, 'distanceToSchl' => $distanceToSchl, 'academic_staff_ref' => $academic_staff_ref, 'state_emp_ref' => $state_emp_ref);
-                $this->db->insert('apply', $applyData);
+
+                $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
+                $this->db->insert('apply',$applyData);
                 ?>
-                <style>div.alert {
-                        display: inline-block;
-                    }</style>
+                <style>div.alert{display:inline-block;}</style>
+
                 <?php
 
             }

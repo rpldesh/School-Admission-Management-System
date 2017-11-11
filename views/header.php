@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="jumbotron">
-    <h3>Grade Entry Management system</h3>
+    <h3>Grade One Entry Management System</h3>
 </div>
 
 
