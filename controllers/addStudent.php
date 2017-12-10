@@ -23,8 +23,8 @@ class AddStudent extends Controller
         $this->view->render('addStudent/index');
     }
     function addStudent(){
-       
-       $this->model->addStudent();
+        $this->index();
+        $this->model->addStudent();
     }
 
 }

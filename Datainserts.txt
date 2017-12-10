@@ -30,8 +30,8 @@ insert into `student`(`std_ID`,`first_name`,`mid_name`,`last_name`,`gender`,`DoB
 ('3/001','Radeeka','Madushani','Ariyasinghe','female','1990-04-02','No.7','Shoba','Bemmulla','Gampaha','Art champion');
 
 insert into `school`(`sch_ID`,`sch_name`,`street_no`,`street_name`,`city`,`district`,`number_of_vacancies`) values
-('0001','Sri Bodhi Vidyalaya','No.122','Sri Bodhi Rd','Gampaha','Gampaha','198'),
-('0002','Bandarawaththa Parakrama Vidyalaya','','Bandarawaththa Rd','Gampaha','Gampaha','198'),
+('001','Sri Bodhi Vidyalaya','No.122','Sri Bodhi Rd','Gampaha','Gampaha','198'),
+('002','Bandarawaththa Parakrama Vidyalaya','','Bandarawaththa Rd','Gampaha','Gampaha','198'),
 ('003','Gothami Vidyalaya','','Oruthota Rd','Gampaha','Gampaha','165'),
 ('004','Pitiyagedara Primary School','','Mahawita Rd','Bemmulla','Gampaha','100'),
 ('005','Vidyaloka Maha Vidyalaya','','Guru Vidyala Rd','Veyangoda','Gampaha','132');
