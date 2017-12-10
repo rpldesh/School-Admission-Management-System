@@ -45,7 +45,7 @@
         <br />
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">Update Student</h4></a>
+            <a href="updateStudent/index"><h4 class="logo-small">Update Student</h4></a>
             <p>Update details of students of your school</p>
         </div>
         <div class="col-sm-4">

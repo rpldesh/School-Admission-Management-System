@@ -9,6 +9,7 @@
 class View
 {
     private $user_list;
+    public $Stu_details;
 
     public function __construct() {
     }
