@@ -5,9 +5,41 @@
  * Date: 10-Dec-17
  * Time: 10:47 AM
  */
+?>
+<html>
+    <body>
 
-public $user_list;
+        <div class="container" style="background-color:lightgoldenrodyellow">
+        <table class="table table-info table-hover">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>User Type</th>
+                    <th>User Status</th>
+                </tr>
 
-print_r($this->user_list);
+            </thead>
+            <tbody>
+            <?php
+                foreach ($this->user_list as $row){
+                    echo '<tr>';
+                    echo '<th>'.$row['u_ID'].'</th>';
+                    echo '<th>'.$row['first_name']." ".$row['last_name'].'</th>';
+                    echo '<th>'.$row['user_type'].'</th>';
+                    echo '<th>'.$row['user_status'].'</th>';
+                    echo '</tr>';
+                }
+            ?>
+</tbody>
+</table>
+</div>
+
+
+
+
+
+</body></html>
+
 
 ?>

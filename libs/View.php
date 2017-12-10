@@ -8,7 +8,7 @@
  */
 class View
 {
-    private $user_list;
+    //public $user_list;
 
     public function __construct() {
     }
