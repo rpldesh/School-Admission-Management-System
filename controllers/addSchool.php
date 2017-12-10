@@ -18,9 +18,11 @@ class AddSchool extends Controller
             header('location'.URL.'index');
         }
     }
+
     function index(){
         $this->view-> render('addSchool/index');
     }
+
     function addSchool()
     {
         $this->index();
