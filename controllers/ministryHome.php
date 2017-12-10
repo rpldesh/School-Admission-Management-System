@@ -16,8 +16,4 @@ class MinistryHome extends Controller
         $this->view-> render('ministryHome/index');
     }
 
-    function addApplicant()
-    {
-        $this->model->addSchool();
-    }
 }

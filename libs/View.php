@@ -8,8 +8,9 @@
  */
 class View
 {
-    public function __construct() {
+    private $user_list;
 
+    public function __construct() {
     }
 
     public function render($name, $no_header = false) {

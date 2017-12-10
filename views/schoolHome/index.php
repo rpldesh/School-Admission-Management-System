@@ -55,7 +55,7 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">Add Staff</h4></a>
+            <a href="addSchoolStaff/showStaff"><h4 class="logo-small">Add Staff</h4></a>
             <p>Add new members accounts for the system</p>
         </div>
     </div>

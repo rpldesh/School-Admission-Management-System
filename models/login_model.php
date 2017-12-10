@@ -17,6 +17,7 @@ class Login_Model extends Model
     private $user_type;
     private $user_status;
 
+
     public function __construct($user_type)
     {
         parent::__construct($user_type);
@@ -42,16 +43,15 @@ class Login_Model extends Model
                 $this->user_type = $row['user_type'];
                 $this->user_status = $row['user_status'];
                 $this->user_id = $row['u_ID'];
-
-                echo $this->user_id;
-
-                //echo htmlentities($key)."---".htmlentities($value);
-
             }
             if ($this->user_status == 'active') {
                 $this->initLoginSession();
 
                 if ($_SESSION['user_type'] == 'interviewer' || $_SESSION['user_type'] == 'principal' || $_SESSION['user_type'] == 'inserter') {
+                    $stmt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID = :user_id");
+                    $stmt->execute(array(':user_id' => $this->user_id));
+                    $result = $stmt->fetch();
+                    $_SESSION['sch_ID']=$result['sch_ID'];
                     header('location: ../schoolHome');
                 } else if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'clerk') {
                     header('location: ../ministryHome');

@@ -47,12 +47,7 @@ class Database extends PDO
             $stmt->bindValue(":$key ",$value);
         }
         $stmt->execute();
-
-
     }
-    public function select($table,$fields,$where){
-        $stmt=$this->prepare("SELECT $fields FROM $table WHERE $where");
-        $stmt->execute();
-    }
+
 }
 ?>
