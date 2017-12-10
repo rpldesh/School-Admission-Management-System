@@ -14,13 +14,10 @@ class ShowSchool extends controller
     }
 
     function index(){
+        $this->view->schools= $this->model->show_school();
+        $this->view->count= $this->model->show_count();
         $this->view-> render('showSchool/index');
     }
 
-    function showSchool()
-    {
-        $this->index();
-        $this->model->showSchool();
-    }
 
 }
