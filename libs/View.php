@@ -8,8 +8,10 @@
  */
 class View
 {
-    private $user_list;
+
     public $Stu_details;
+    public $user_list;
+
 
     public function __construct() {
     }
