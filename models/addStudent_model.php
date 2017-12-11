@@ -16,8 +16,9 @@ class AddStudent_Model extends Model
         Session::init();
         $this->user_ID=Session::get('user_id');
     }
-    public function addStudent(){
 
+    public function addStudent(){
+        try{
         $student_ID=$_POST['student_ID'];
         $first_name=$_POST['student_f_name'];
         $mid_name=$_POST['student_m_name'];
@@ -40,23 +41,28 @@ class AddStudent_Model extends Model
             'city'=>$city,
             'district'=>$district);
 
+        $this->db->beginTransaction();
         $this->db->insert('student',$studentData);
+
 
        if ($_POST['land_phone']!=null){
             $phone1=$_POST['land_phone'];
             $studentPhoneData=array('std_ID'=> $student_ID,'phone_number'=>$phone1);
             $this->db->insert(' studentPhone',$studentPhoneData);
+
         }
         if ($_POST['mobile_phone1']!=null){
             $phone2=$_POST['mobile_phone1'];
             $studentPhoneData=array('std_ID'=> $student_ID,'phone_number'=>$phone2);
             $this->db->insert(' studentPhone',$studentPhoneData);
 
+
         }
         if ($_POST['mobile_phone2']!=null){
             $phone3=$_POST['mobile_phone2'];
             $studentPhoneData=array('std_ID'=> $student_ID,'phone_number'=>$phone3);
             $this->db->insert(' studentPhone',$studentPhoneData);
+
         }
         
         $stmt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID=:user_ID");
@@ -64,7 +70,7 @@ class AddStudent_Model extends Model
             ':user_ID' => $this->user_ID));
         $count = $stmt->rowCount();
 
-        echo $count;
+
         if ($count > 0) {
 
             $result = $stmt->fetchAll();
@@ -78,12 +84,18 @@ class AddStudent_Model extends Model
                     'state'=>'active'
                 );
                 $this->db->insert('attend',$admissionData);
+
                 ?>
                 <style>div.alert{display:inline-block;}</style>
 
                 <?php
             }
            
+        }$this->db->commit();
+        }catch (Exception $e){
+            $this->db->rollBack();
+            echo "Failed to insert";
+
         }
 
     }

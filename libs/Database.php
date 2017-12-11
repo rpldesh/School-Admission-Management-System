@@ -33,6 +33,7 @@ class Database extends PDO
         //echo "INSERT into $table (`$fieldNames`) VALUES ($fieldValues)";
 
         $stmt->execute();
+
     }
 
     public function update($table,$data,$where){

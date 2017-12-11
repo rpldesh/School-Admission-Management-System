@@ -22,7 +22,7 @@ class AddApplicant_Model extends Model
 
     public function addApplicant()
     {
-
+    try{
         $application_ID = $_POST['application_ID'];
         $first_name = $_POST['app_f_name'];
         $mid_name = $_POST['app_m_name'];
@@ -53,6 +53,7 @@ class AddApplicant_Model extends Model
             'guardian_fName' => $guardian_fName,
             'guardian_LName' => $guardian_LName);
 
+        $this->db->beginTransaction();
         $this->db->insert('applicant', $applicantData);
 
 
@@ -106,6 +107,8 @@ class AddApplicant_Model extends Model
 
                 $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
                 $this->db->insert('apply',$applyData);
+
+
                 ?>
                 <style>div.alert{display:inline-block;}</style>
 
@@ -113,7 +116,14 @@ class AddApplicant_Model extends Model
 
             }
         }
+        $this->db->commit();
+    }catch(Exception $e){
+            $this->db->rollBack();
+            echo "Failed to insert";
+
     }
+    }
+
 
 }
 ?>
