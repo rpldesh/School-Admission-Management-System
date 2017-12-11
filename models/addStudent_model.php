@@ -94,7 +94,9 @@ class AddStudent_Model extends Model
         }$this->db->commit();
         }catch (Exception $e){
             $this->db->rollBack();
-            echo "Failed to insert";
+            echo '<script language="javascript">';
+            echo 'alert("Error occured :( Failed to insert")';
+            echo '</script>';
 
         }
 
