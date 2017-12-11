@@ -20,12 +20,39 @@ class AddSchoolStaff extends Controller
         }
     }
 
-    function index(){
-        $this->view-> render('addMinStaff/index');
+    public function index(){
+        $this->view-> render('addSchoolStaff/index');
     }
 
-    function showStaff()
+    public function showStaff()
     {
+        $this->view->user_list = $this->model->showStaff();
+        $this->index();
+    }
+
+    public function createUser(){
+        $this->model->createUser();
+        $this->view->user_list = $this->model->showStaff();
+        $this->index();
+    }
+
+    public function loadUser($id){
+
+    }
+
+    public function disableUser($id){
+        $this->model->disableUser($id);
+        $this->view->user_list = $this->model->showStaff();
+        $this->index();
+    }
+
+    public function editUser($id){
+        $this->view->user_details= $this->model->editUser($id);
+        $this->view->render('addSchoolStaff/editUser');
+    }
+
+    public function editConfirm(){
+        $this->model->editConfirm();
         $this->view->user_list = $this->model->showStaff();
         $this->index();
     }
