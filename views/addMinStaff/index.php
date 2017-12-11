@@ -6,13 +6,26 @@
  * Time: 10:47 AM
  */
 ?>
-<<<<<<< HEAD
 <title>Title</title>
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}</style>
+<script type="text/javascript">
+    <!--
+    function getConfirmation(){
+        var retVal = confirm("You are going to disable this user.. Are you sure you want to continue ?");
+        if( retVal == true ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    //-->
+</script>
 </head>
 <body>
+
 <table class="table">
     <tbody>
 
@@ -31,51 +44,30 @@
         echo '<td>'.$row['first_name']." ".$row['last_name'].'</td>';
         echo '<td>'.$row['user_type'].'</td>';
         echo '<td>'.$row['user_status'].'</td>';
-        echo '<td><a href="#">Edit details </a></td>';
-        echo '<td> <a href="#">Disable user </a></td>';
+        echo '<td> <a href="'.URL.'addMinStaff/editUser/'.$row['u_ID'].'" > Edit user </a></td>';
+        echo '<td> <a href="'.URL.'addMinStaff/disableUser/'.$row['u_ID'].'" onclick="return getConfirmation();"> Disable user </a></td>';
         echo '</tr>';
     }
     ?>
     </tbody>
 </table>
 
-</body></html>
-=======
+
+<form action="<?php echo URL;?>addMinStaff/createUser" method="post"">
+<h2>Add a new user</h2>
+<label for="user_ID"><b>User ID</b></label>
+<input name="user_ID" type="text" placeholder=" Enter User ID" autofocus required/>
+<label for="f_name"><b>First Name</b></label>
+<input name="f_name" type="text" placeholder=" First Name" autofocus />
+<label for="l_name"><b>Last Name</b></label>
+<input name="l_name" type="text" placeholder=" Last Name" autofocus />
+<label for="user_type"><b>User Type</b></label>
+<select id="user_type" name="user_type" required>
+    <option value="admin" >Admin</option>
+    <option value="clerk" >Clerk</option></select>
+<input id="submit" type="submit"/>
+</form>
 
 
-<html>
-<body>
-
-<div class="container" style="background-color:lightgoldenrodyellow">
-    <table class="table table-info table-hover">
-        <thead>
-        <tr>
-            <th>User ID</th>
-            <th>Name</th>
-            <th>User Type</th>
-            <th>User Status</th>
-        </tr>
-
-        </thead>
-        <tbody>
-        <?php
-        foreach ($this->user_list as $row){
-            echo '<tr>';
-            echo '<th>'.$row['u_ID'].'</th>';
-            echo '<th>'.$row['first_name']." ".$row['last_name'].'</th>';
-            echo '<th>'.$row['user_type'].'</th>';
-            echo '<th>'.$row['user_status'].'</th>';
-            echo '</tr>';
-        }
-        ?>
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-</body></html>
->>>>>>> 76df5a31f958b5f34804e1c33be6a9e199a9b253
->>>>>>> 45accd767cd453f72012488a6d5d95f23826a700
+</body>
+</html>

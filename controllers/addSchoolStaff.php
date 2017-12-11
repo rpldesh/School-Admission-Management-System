@@ -36,10 +36,6 @@ class AddSchoolStaff extends Controller
         $this->index();
     }
 
-    public function loadUser($id){
-
-    }
-
     public function disableUser($id){
         $this->model->disableUser($id);
         $this->view->user_list = $this->model->showStaff();

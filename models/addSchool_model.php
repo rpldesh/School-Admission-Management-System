@@ -22,13 +22,26 @@ class AddSchool_Model extends Model
             'number_of_vacancies'=>$_POST['vacancies']);
 
         try {
-            $this->db->insert('school',$schoolData);
+            $c = $this->db->insert('school',$schoolData);
+            if ($c==0){
+                $message = "Error occured\n Please check if a school under same ID already exists in the system";
+                echo "<script type = 'text/javascript' > alert('$message');window . location = 'http://localhost/School-Admission-Management-System/schoolHome';</script>";
+            }else{
             ?>
             <style>div.alert{display:inline-block;}</style>
-            <?php
+            <?php }
         } catch (PDOException $e) {
-            $message = "Your user type does not have privilege to insert new schools ";
-            echo "<script type = 'text/javascript' > alert('$message');window . location = \"../index\";</script>";
+            if ($e->getCode()==23000) {
+                echo '<script language="javascript">';
+                echo 'alert("Error occured \n School ID you entered already exists in the system")';
+                echo 'window . location = \"http://localhost/School-Admission-Management-System/schoolHome\"';
+                echo '</script>';
+            }else{
+                echo '<script language="javascript">';
+                echo 'alert("You may not have privileges to add new schools to the system\n Please recheck and try again")';
+                echo 'window . location = \"http://localhost/School-Admission-Management-System/schoolHome\"';
+                echo '</script>';
+            }
         }
     }
 }

@@ -8,9 +8,21 @@
 ?>
 <title>Title</title>
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
-<?php //<link href="<?php echo URL ?> <?php //public/css/login.css" rel="stylesheet"> ?>
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}</style>
+<script type="text/javascript">
+    <!--
+    function getConfirmation(){
+        var retVal = confirm("You are going to disable this user.. Are you sure you want to continue ?");
+        if( retVal == true ){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    //-->
+</script>
 </head>
 <body>
 
@@ -33,7 +45,7 @@
                     echo '<td>'.$row['user_type'].'</td>';
                     echo '<td>'.$row['user_status'].'</td>';
                     echo '<td> <a href="'.URL.'addSchoolStaff/editUser/'.$row['u_ID'].'"> Edit user </a></td>';
-                    echo '<td> <a href="'.URL.'addSchoolStaff/disableUser/'.$row['u_ID'].'"> Disable user </a></td>';
+                    echo '<td> <a href="'.URL.'addSchoolStaff/disableUser/'.$row['u_ID'].'" onclick="return getConfirmation();"> Disable user </a></td>';
                     echo '</tr>';
                 }
             ?>
@@ -58,5 +70,5 @@
             </form>
 
 
-</body
-></html>
+</body>
+</html>

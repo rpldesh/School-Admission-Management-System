@@ -29,6 +29,29 @@ class AddMinStaff extends Controller
         $this->view->user_list = $this->model->showStaff();
         $this->index();
     }
+
+    public function createUser(){
+        $this->model->createUser();
+        $this->view->user_list = $this->model->showStaff();
+        $this->index();
+    }
+
+    public function disableUser($id){
+        $this->model->disableUser($id);
+        $this->view->user_list = $this->model->showStaff();
+        $this->index();
+    }
+
+    public function editUser($id){
+        $this->view->user_details= $this->model->editUser($id);
+        $this->view->render('addMinStaff/editUser');
+    }
+
+    public function editConfirm(){
+        $this->model->editConfirm();
+        $this->view->user_list = $this->model->showStaff();
+        $this->index();
+    }
 }
 
 ?>
