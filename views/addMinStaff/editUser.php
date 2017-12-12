@@ -47,7 +47,7 @@
             </td>
         </tr>
 
-        <input name="Submit_change_Stu" type="submit">
+        <input name="Submit_change_Stu" type="submit" value="Save Changes">
     </tbody>
 </table>
 

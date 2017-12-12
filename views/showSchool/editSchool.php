@@ -20,7 +20,7 @@ foreach($this->School_details as $row){
             <i class="fa fa-coffee"></i>
             Edit school details and save changes
         </div>
-        <h3>School Details</h3>
+        <h3 style="color:white">School Details</h3>
 
         <form class="form-horizontal" role="form" action="<?php echo URL ?>showSchool/editConfirm"  method="post">
             <div class="form-group">
@@ -74,7 +74,7 @@ foreach($this->School_details as $row){
             <div class="form-group">
                 <label class="col-md-3 control-label">No of Vacancies</label>
                 <div class="col-md-8">
-                    <input class="form-control" type="text" name="number_of_vacancies" value=<?php echo $row['number_of_vacancies']?>>
+                    <input class="form-control" type="number" name="number_of_vacancies" value=<?php echo $row['number_of_vacancies']?>>
                 </div>
             </div>
 

@@ -50,8 +50,8 @@ class showSchool_model extends Model
 
 
         try {
-            $stmt1 = $this->db->prepare('UPDATE users SET sch_name=:sch_name WHERE sch_ID = :sch_id');
-            $stmt1->execute(array(':sch_name'=>$sch_name));
+            $stmt1 = $this->db->prepare('UPDATE school SET sch_name=:sch_name, street_no=:street_no, street_name=:street_name, city=:city, district=:district, number_of_vacancies=:vacancies WHERE sch_ID = :sch_id');
+            $stmt1->execute(array(':sch_name'=>$sch_name, 'sch_id'=>$sch_id, ':street_no'=>$street_no,':street_name'=>$street_name,':city'=>$city,':district'=>$district,':vacancies'=>$number_of_vacancies ));
         } catch (PDOException $e) {
             echo '<script language="javascript">';
             echo 'alert("Error occurred \n You may not have privileges to proceed")';
