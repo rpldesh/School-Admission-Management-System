@@ -29,13 +29,12 @@
                 foreach ($this->schools as $row){
                     echo '<tr>';
                     echo '<th>'.$row['sch_ID'].'</th>';
-                    echo '<th>'.$row['sch_name'].'</th>';
+                    echo '<th><a href="'.URL.'showSchool/editSchool/'.$row['sch_ID'].'" >'.$row['sch_name'].'</th>';
                     echo '<th>'.$row['street_no'].'</th>';
                     echo '<th>'.$row['street_name'].'</th>';
                     echo '<th>'.$row['city'].'</th>';
                     echo '<th>'.$row['district'].'</th>';
                     echo '<th>'.$row['number_of_vacancies'].'</th>';
-
                     echo '</tr>';
                 }
             ?>
