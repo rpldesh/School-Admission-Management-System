@@ -5,6 +5,29 @@
 <style> div.alert{display: none;}</style>
 </head>
 <body>
+<!-------------    Navigation Bar  ------------>
+<nav class="navbar navbar-inverse navbarmod">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a class="navifont" href="#">Home</a></li>
+                <li><a class="navifont" href="#">Member Profile</a></li>
+                <li><a class="navifont" href="#">About</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-------------------------------------------->
+
+
 <div class="container">
 
     <form action="addApplicant/addApplicant" method="post" id="signup">
@@ -35,7 +58,7 @@
             <input name="app_l_name" type="text" placeholder="Last Name" autofocus />
             <label for="App_gender"><b>Gender</b></label><br />
             <select id="App_gender" name="gender" required>
-                <option value="Male" >Male</option><option value="Female" >Female</option></select>
+                <option value="male" >Male</option><option value="female" >Female</option></select>
             <label for="DOB"><b>Date Of Birth</b></label><br />
             <input id="DOB" name="dob" type="date" required/><br />
             <label for="mother_fName"><b>Mother's First Name</b></label><br />

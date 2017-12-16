@@ -19,5 +19,16 @@ class ShowSchool extends controller
         $this->view-> render('showSchool/index');
     }
 
+    public function editSchool($id){
+        $this->view->School_details= $this->model->editSchool($id);
+        $this->view->render('showSchool/editSchool');
+    }
+
+    public function editConfirm(){
+        $this->model->editConfirm();
+        $this->view->schools = $this->model->show_School();
+        $this->index();
+    }
+
 
 }

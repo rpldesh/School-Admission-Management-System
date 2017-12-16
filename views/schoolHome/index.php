@@ -58,6 +58,11 @@
             <a href="addSchoolStaff/showStaff"><h4 class="logo-small">Add/Edit Staff</h4></a>
             <p>Add new members accounts for the system</p>
         </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href="interview/index"><h4 class="logo-small">Interview</h4></a>
+            <p>Custom interface for interview</p>
+        </div>
     </div>
     <br><br>
 

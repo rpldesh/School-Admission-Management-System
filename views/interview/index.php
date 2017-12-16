@@ -7,18 +7,20 @@
 <body>
 <div class="container">
 
-    <form id="signup" action="<?php echo URL;?>updateStudent/getStuDetails" method="post" id="searchStu">
+    <form action="<?php echo URL;?>interview/loadApplicant" method="post" id="signup">
 
         <div class="header">
 
-            <h3>LOAD STUDENT DETAILS</h3>
+            <h3>LOAD APPLICANT DETAILS</h3>
+
+            <p>Enter Applicantion ID</p>
 
         </div>
 
 
         <div class="inputs">
-            <label for="std_ID"><b>Student ID</b></label><br />
-            <input name="std_ID" type="text" placeholder=" Enter Student ID" autofocus />
+            <label for="application_ID"><b>Application ID</b></label><br />
+            <input name="application_ID" type="text" placeholder=" Enter Application ID" autofocus />
 
 
             <input id="submit" type="submit"/>

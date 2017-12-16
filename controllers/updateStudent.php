@@ -14,46 +14,22 @@ class UpdateStudent extends Controller
         parent::__construct();
     }
     public function index(){
-        $this->view->Stu_details=$this->model->updateStuDet();
         $this->view-> render('updateStudent/index');
     }
-    function updateStuDet($id)
+    function getStuDetails()
     {
-        $this->index();
-        $this->model->updateStuDet();
+        $this->view->Stu_details = $this->model->getStuDetails();
+        $this->view->render('updateStudent/changeStuDetails');
     }
     function getId($id){
         
     }
 
-    public function updateStudentTable(){
+    public function updateDetails(){
+        $this->model->updateDetails();
+        $this->index();
 
 
-        $student_ID=$_POST['student_ID'];
-        $first_name=$_POST['student_f_name'];
-        $mid_name=$_POST['student_m_name'];
-        $last_name=$_POST['student_l_name'];
-        $gender=$_POST['gender'];
-        $dob=$_POST['dob'];
-        $street_no=$_POST['street_no'];
-        $street_name=$_POST['street_name'];
-        $city=$_POST['city'];
-        $district=$_POST['district'];
-
-        $updateStuData=array('std_ID'=>$student_ID,
-            'first_name'=>$first_name,
-            'mid_name'=> $mid_name,
-            'last_name'=>$last_name,
-            'gender'=> $gender,
-            'DoB'=>$dob,
-            'street_no'=> $street_no,
-            'street_name'=> $street_name,
-            'city'=>$city,
-            'district'=>$district);
-
-
-        $this->model->updateStudentTable($updateStuData);
-        header('location:'.URL.'updateStudent');
 
     }
 }
