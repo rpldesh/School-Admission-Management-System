@@ -42,9 +42,9 @@
         <tr>
             <th>User Type</th>
             <td><select id="u_type" name="u_type" required>
-                    <option value="interviewer" >Interviewer</option>
-                    <option value="inserter" >Inserter</option>
-                    <option value="principal" >Principal</option></select>
+                    <option value="interviewer" <?php if($row['user_type']=='interviewer') echo 'selected'; ?> >Interviewer</option>
+                    <option value="inserter" <?php if($row['user_type']=='inserter') echo 'selected'; ?> >Inserter</option>
+                    <option value="principal" <?php if($row['user_type']=='principal') echo 'selected'; ?>  >Principal</option></select>
             </td>
         </tr>
 

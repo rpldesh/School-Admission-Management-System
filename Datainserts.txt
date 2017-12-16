@@ -37,8 +37,8 @@ insert into `school`(`sch_ID`,`sch_name`,`street_no`,`street_name`,`city`,`distr
 ('005','Vidyaloka Maha Vidyalaya','','Guru Vidyala Rd','Veyangoda','Gampaha','132');
 
 insert into `school_staff`(`u_ID`,`sch_ID`,`user_type`) values
-('1','0001','principal'),
-('2','0001','interviewer'),
+('1','001','principal'),
+('2','001','interviewer'),
 ('3','001','inserter'),
 ('8','003','inserter'),
 ('9','004','interviewer');
