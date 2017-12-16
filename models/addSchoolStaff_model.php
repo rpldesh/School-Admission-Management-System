@@ -36,11 +36,13 @@ class AddSchoolStaff_Model extends Model
 
         $uData = array('u_ID'=>$u_id,'first_name'=>$f_name,'last_name'=>$l_name,'user_type'=>$user_type,'user_status'=>'active');
         $schData = array('u_ID'=>$u_id,'sch_ID'=>$this->schoolID,'user_type'=>$user_type);
+        $logData = array('u_ID'=>$u_id,'pwd'=>Hash::create('md5', $f_name,HASH_PASSWORD_KEY),'username'=>$f_name);
 
         try {
             $this->db->beginTransaction();
             $this->db->insert('users', $uData);
             $this->db->insert('school_staff', $schData);
+            $this->db->insert('login', $logData);
             $this->db->commit();
         }
         catch (PDOException $e) {

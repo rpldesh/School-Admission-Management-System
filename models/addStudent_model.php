@@ -42,7 +42,7 @@ class AddStudent_Model extends Model
             'district'=>$district);
 
         $this->db->beginTransaction();
-        //$this->db->insert('student',$studentData);
+        $this->db->insert('student',$studentData);
 
 
        if ($_POST['land_phone']!=null){
