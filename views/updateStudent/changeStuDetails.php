@@ -1,6 +1,7 @@
 <title>Title</title>
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
+
 <style> div.alert{display: none;}</style>
 </head>
 <body>
