@@ -14,14 +14,40 @@
         color: dodgerblue;
 
     }
-    tr:hover{
+    .enlarge:hover{
         color:#a6e1ec;
-        font-size: large;
+        font-size: 120%;
 
+    }
+    .navifont{
+        font-size: 180%;
     }
 </style>
 
     <body>
+    <!-------------    Navigation Bar  ------------>
+    <nav class="navbar navbar-inverse navbarmod">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a class="navifont" href="#">Home</a></li>
+                    <li><a class="navifont" href="#">Member Profile</a></li>
+                    <li><a class="navifont" href="#">About</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-------------------------------------------->
+
+
 
 
         <div class="container" style="background-color:lightgoldenrodyellow font-size:200%">
@@ -42,13 +68,13 @@
             <?php
                 foreach ($this->schools as $row){
                     echo '<tr>';
-                    echo '<th>'.$row['sch_ID'].'</th>';
-                    echo '<th><a class="link" href="'.URL.'showSchool/editSchool/'.$row['sch_ID'].'" style="color:dodgerblue">'.$row['sch_name'].'</a></th>';
-                    echo '<th>'.$row['street_no'].'</th>';
-                    echo '<th>'.$row['street_name'].'</th>';
-                    echo '<th>'.$row['city'].'</th>';
-                    echo '<th>'.$row['district'].'</th>';
-                    echo '<th>'.$row['number_of_vacancies'].'</th>';
+                    echo '<td>'.$row['sch_ID'].'</td>';
+                    echo '<td class="enlarge"><a class="link" href="'.URL.'showSchool/editSchool/'.$row['sch_ID'].'" style="color:dodgerblue">'.$row['sch_name'].'</a></td>';
+                    echo '<td>'.$row['street_no'].'</td>';
+                    echo '<td>'.$row['street_name'].'</td>';
+                    echo '<td>'.$row['city'].'</td>';
+                    echo '<td>'.$row['district'].'</td>';
+                    echo '<td>'.$row['number_of_vacancies'].'</td>';
                     echo '</tr>';
                 }
             ?>

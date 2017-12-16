@@ -5,6 +5,29 @@
 <style> div.alert{display: none;}</style>
 </head>
 <body>
+<!-------------    Navigation Bar  ------------>
+<nav class="navbar navbar-inverse navbarmod">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a class="navifont" href="#">Home</a></li>
+                <li><a class="navifont" href="#">Member Profile</a></li>
+                <li><a class="navifont" href="#">About</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-------------------------------------------->
+
+
 <div class="container">
 
     <form action="addApplicant/addApplicant" method="post" id="signup">
