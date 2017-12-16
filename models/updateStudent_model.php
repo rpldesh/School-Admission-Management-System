@@ -26,7 +26,7 @@ class UpdateStudent_Model extends Model
         }
 
     }
-    public function updateDetails($updateStuData){
+    public function updateDetails(){
 
         $student_ID=$_POST['student_ID'];
         $first_name=$_POST['student_f_name'];

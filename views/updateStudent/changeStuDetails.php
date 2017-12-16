@@ -17,7 +17,7 @@
         Change Student Details
     </th>
     <tbody>
-    <form class="Edit_stu_data_table" action="updateStudent/updateDetails"  method="post" id="edit_stu_det_table">
+    <form class="Edit_stu_data_table" action="updateDetails"  method="post" id="edit_stu_det_table">
         <tr>
 
             <th>Student ID</th>
@@ -47,7 +47,7 @@
 
         <tr>
             <th>DoB</th>
-            <td><input name="dob" type="date" required value="<?php echo $row['DoB'] ?> "/><br /></td>
+            <td><input name="dob" type="date" autofocus value="<?php echo $row['DoB'] ?> "/><br /></td>
         </tr>
 
         <tr>
@@ -66,8 +66,13 @@
         </tr>
 
         <tr>
-            <th>Street Name</th>
+            <th>Street No</th>
             <td><input name="street_no" type="text" value="<?php echo $row['street_no'] ?> " autofocus /></td>
+        </tr>
+
+        <tr>
+            <th>Street Name</th>
+            <td><input name="street_name" type="text" value="<?php echo $row['street_name'] ?> " autofocus /></td>
         </tr>
 
         <tr>

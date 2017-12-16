@@ -27,8 +27,8 @@ class UpdateStudent extends Controller
 
     public function updateDetails(){
         $this->model->updateDetails();
-        $this->view->Stu_details = $this->model->getStuDetails();
         $this->index();
+
 
 
     }

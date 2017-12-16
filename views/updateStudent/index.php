@@ -7,13 +7,11 @@
 <body>
 <div class="container">
 
-    <form action="<?php echo URL;?>updateStudent/getStuDetails" method="post" id="searchStu">
+    <form id="signup" action="<?php echo URL;?>updateStudent/getStuDetails" method="post" id="searchStu">
 
         <div class="header">
 
             <h3>LOAD STUDENT DETAILS</h3>
-
-            <p>Enter Student ID</p>
 
         </div>
 
@@ -23,7 +21,7 @@
             <input name="std_ID" type="text" placeholder=" Enter Student ID" autofocus />
 
 
-            <input id="Submit" type="submit"/>
+            <input id="submit" type="submit"/>
 
         </div>
 
