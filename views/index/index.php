@@ -9,7 +9,7 @@
 <link href="<?php echo URL?>public/css/animate.css" rel="stylesheet">
 <link href="<?php echo URL?>public/css/landing.css" rel="stylesheet">
 <link href="<?php echo URL?>/public/css/login.css" rel="stylesheet">
-
+<!--<style> footer{ position: absolute; right: 0; bottom: 0; left: 0;}</style></head>-->
 
 <body>
 
