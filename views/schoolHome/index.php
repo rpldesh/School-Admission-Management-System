@@ -50,8 +50,8 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">Results</h4></a>
-            <p>View final results for applicants of your school</p>
+            <a href="viewSchoolResult/getResult"><h4 class="logo-small">Results</h4></a>
+            <p>View final results of applicants of your school</p>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>

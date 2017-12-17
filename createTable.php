@@ -14,15 +14,13 @@ $sql="create table student
 	city		varchar(100),
 	district		varchar(100),
 	achievements	text,
-	primary key(std_ID))";
+	primary key(std_ID)),
+	check (gender in (‘male’,’female’))";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
     die('Could not create table: ');
 }
 echo "Table student created successfully\n";
-
-
-
 
 # School table
 $sql="create table school
@@ -56,7 +54,8 @@ $sql="create table applicant
 	father_LName		varchar(100),
 	guardian_fName	varchar(100),	
 	guardian_LName	varchar(100),	
-	primary key (application_ID)
+	primary key (application_ID),
+	check (gender in (‘male’,’female’))
 	)";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
@@ -95,7 +94,8 @@ $sql="create table apply
 	foreign key (application_ID) references applicant(application_ID)
 		on delete cascade,
 	foreign key (sch_ID) references school(sch_ID)
-		on delete cascade
+		on delete cascade,
+	check (distanceToSchl > 0)
 	)";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
@@ -115,7 +115,8 @@ $sql="create table attend
 	foreign key (std_ID) references student(std_ID) 
 	on delete cascade,
 	foreign key (sch_ID) references school(sch_ID)
-	on delete cascade
+	on delete cascade,
+	check (state in (‘current’,’past’))
 	)";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
@@ -134,7 +135,8 @@ $sql="Create table users
 	streat_name		varchar(100),
 	city			varchar(100),
 	user_status		varchar(20),
-	primary key(u_ID)	
+	primary key(u_ID),
+	check (user_type in (‘principal’,’interviewer,’inserter’,’admin’,’clerk’))
 )";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
@@ -151,7 +153,8 @@ $sql="create table school_staff
 	foreign key (u_ID) references users(u_ID)
 		on delete cascade,
 foreign key (sch_ID) references school(sch_ID)
-		on delete cascade
+		on delete cascade,
+check (user_type in (‘principal’,’interviewer,’inserter’))
 	)";
 $retval = mysqli_query(  $connection, $sql );
 if(! $retval ) {
@@ -185,6 +188,7 @@ $sql="create table interview_result
 	sibling_ref_mark	numeric(5,2),
 	academic_ref_mark	numeric(5,2),
  	state_emp_mark	numeric(5,2),
+ 	total_mark	numeric(5,2),
 	primary key (application_ID,u_ID),
 	foreign key (application_ID) references applicant(application_ID)
 		on delete cascade,
@@ -196,23 +200,6 @@ if(! $retval ) {
     die('Could not create table: ');
 }
 echo "Table interview_result created successfully\n";
-
-
-	
-# Ministry Staff Privilege level
-$sql="create table ministry_Staff_privilege
-(u_ID			varchar(20),	
-	 privilege_level	varchar(50),
-	 primary key (u_ID),
-	 foreign key (u_ID) references users(u_id)
-		on delete cascade
-	)";
-$retval = mysqli_query(  $connection, $sql );
-if(! $retval ) {
-    die('Could not create table: ');
-}
-echo "Table ministry_Staff_privilege created successfully\n";
-
 
 #phone tables		
 $sql="create table studentPhone
@@ -257,10 +244,13 @@ if(! $retval ) {
 }
 echo "Table userPhone created successfully\n";
 
-
-
-
-
+// Create index to search through attend table to select studets of a single school easily
+$sql='ALTER TABLE attend ADD INDEX schID_index (sch_ID)';
+$retval = mysqli_query(  $connection, $sql );
+if(! $retval ) {
+    die('Could not create index: ');
+}
+echo "sch_ID_index created successfully\n";
 
 ?>
 
