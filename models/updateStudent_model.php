@@ -9,7 +9,6 @@
 class UpdateStudent_Model extends Model
 {
     private $schoolID;
-    private $scl_id;
 
     public function __construct($user_type)
     {

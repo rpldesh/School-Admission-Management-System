@@ -8,6 +8,7 @@
  */
 class AddApplicant extends Controller
 {
+    private $countApplication;
     function __construct()
     {
         parent::__construct();
@@ -15,9 +16,24 @@ class AddApplicant extends Controller
     function index(){
         $this->view-> render('addApplicant/index');
     }
-    function addApplicant()
+    function addNewApplicantDet()
     {
         $this->index();
-        $this->model->addApplicant();
+        $this->model->addNewApplicantDet();
+    }
+    function addExistApplicantDet()
+    {
+        $this->index();
+        $this->model->addExistApplicantDet();
+    }
+
+
+    function checkAppID(){
+        $countApplication=$this->model->checkAppID();
+        if($countApplication>0){
+            $this->view-> render('addApplicant/addExistApplicant');
+        }else{
+            $this->view-> render('addApplicant/addNewApplicant');
+        }
     }
 }
