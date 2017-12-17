@@ -16,9 +16,8 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Member Profile</a></li>
-                <li><a href="#">About</a></li>
+                <li><a class="navifont" href="<?php echo URL?>ministryHome">Home</a></li>
+                <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1600%">Logout</a></li>
             </ul>
 
         </div>

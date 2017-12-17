@@ -17,4 +17,9 @@ class Login extends Controller
     {
         $this->model->loginDo();
     }
+
+    function logout(){
+        Session::destroy();
+        header('Location:'.URL.'index.php');
+    }
 }
