@@ -8,21 +8,30 @@
  */
 class UpdateStudent_Model extends Model
 {
+    private $schoolID;
+    private $scl_id;
+
     public function __construct($user_type)
     {
         parent::__construct($user_type);
         Session::init();
+        $this->schoolID = Session::get('sch_ID');
     }
 
     public function getStuDetails()
     {
         $id=$_POST['std_ID'];
         Session::set('std_ID',$id);
-        $sth=$this->db->prepare("SELECT * FROM student WHERE std_ID=:id");
-        $sth->execute(array('id'=>$id));
-        $count=$sth->rowCount();
-        if($count){
-            return $sth->fetchAll();
+
+        $stmt=$this->db->prepare("SELECT * FROM student NATURAL JOIN attend WHERE sch_ID=:sch_ID and std_ID=:id and state= 'current' ");
+        $stmt->execute(array('sch_ID'=>$this->schoolID,'id' => $id));
+        $count1=$stmt->rowCount();
+        if($count1){
+            return $stmt->fetchAll();
+        }
+        else{
+            $message = "This user Id no longer exist in your school";
+            echo "<script type = 'text/javascript' > alert('$message');window . location = 'http://localhost/School-Admission-Management-System/updateStudent';</script>";
         }
 
     }
@@ -38,6 +47,8 @@ class UpdateStudent_Model extends Model
         $street_name=$_POST['street_name'];
         $city=$_POST['city'];
         $district=$_POST['district'];
+        $date_of_add=$_POST['date_of_add'];
+
 
 
         try {
@@ -52,8 +63,14 @@ class UpdateStudent_Model extends Model
                 ':street_no'=> $street_no,
                 ':street_name'=> $street_name,
                 ':city'=>$city,
-                ':district'=>$district));
+                ':district'=>$district,
+                ':date_of_add'=>$date_of_add));
             $this->db->commit();
+            echo '<script language="javascript">';
+            echo 'alert("Student details updated Successfully!")';
+            echo 'window . location = \"http://localhost/School-Admission-Management-System/updateStudent\"';
+            echo '</script>';
+
         } catch (PDOException $e) {
             $this->db->rollBack();
             echo '<script language="javascript">';

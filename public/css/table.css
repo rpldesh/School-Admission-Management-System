@@ -31,8 +31,8 @@ table {
     -webkit-border-radius: 3px;
     border-radius: 3px;
     border: none;
-    padding: 13px 10px;
-    width: 330px;
+    padding: 10px 10px;
+    width: 300px;
     margin-bottom: 20px;
     box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
     clear: both;
@@ -120,7 +120,7 @@ tr:last-of-type td:last-child {
 
 
 /* Style the buttons inside the tab */
-div.tab button{text-align:left;
+.Submit_btn{text-align:left;
     background: linear-gradient(#777, #444);
     border-left: 1px solid #555;
     border-right: 1px solid #777;
@@ -144,3 +144,16 @@ div.tab button:hover {
 div.tab button.active {
     background-color: #ccc;
 }
+
+
+/*.Submit_btn {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, .08));
+    content: '';
+    display: block;
+    height: 25%;
+    left: 0;
+    margin: 1px 0 0 0;
+    position: absolute;
+    top: 25%;
+    width: 25%;
+}*/
