@@ -6,7 +6,7 @@
  * Time: 10:47 AM
  */
 ?>
-<title>Title</title>
+<title>School Staff</title>
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}
