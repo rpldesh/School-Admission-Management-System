@@ -11,9 +11,34 @@
 <title>Edit User Details</title>
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
-<style> div.alert{display: none;}</style>
+<style> div.alert{display: none;}
+    .navifont{
+        font-size: 150%;
+    }
+</style>
 </head>
 <body>
+<!-------------    Navigation Bar  ------------>
+<nav class="navbar navbar-inverse navbarmod">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a class="navifont" href="<?php echo URL?>ministryHome">Home</a></li>
+                <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1550%">Logout</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-------------------------------------------->
+
 
 <table>
     <?php
@@ -47,7 +72,9 @@
             </td>
         </tr>
 
-        <input name="Submit_change_Stu" type="submit" value="Save Changes">
+        <tr>
+            <td colspan="2"><input class="Submit_btn" align ="center" name="Submit_change_Stu" type="submit"><br /></td>
+        </tr>
     </tbody>
 </table>
 
