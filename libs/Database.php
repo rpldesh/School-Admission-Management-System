@@ -27,6 +27,7 @@ class Database extends PDO
         foreach ($data as $key=>$value){
             $stmt->bindValue(":$key",$value);
         }
+
         $stmt->execute();
 
     }

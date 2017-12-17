@@ -12,6 +12,13 @@ class UpdateStudent extends Controller
     function __construct()
     {
         parent::__construct();
+        Session::init();
+        $loggedIn = Session::get('loggedIn');
+        $schoolID = Session::get('sch_ID');
+        if($loggedIn == false){
+            Session::destroy();
+            header('location'.URL.'index');
+        }
     }
     public function index(){
         $this->view-> render('updateStudent/index');

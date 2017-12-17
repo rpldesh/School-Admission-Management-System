@@ -160,7 +160,7 @@ class AddStudent_Model extends Model
                     'std_ID'=> $student_ID,
                     'sch_ID'=>$this->sch_ID,
                     'dateOfAdmission'=>$date_of_add,
-                    'state'=>'active'
+                    'state'=>'current'
                 );
                 $this->db->insert('attend',$admissionData);
 

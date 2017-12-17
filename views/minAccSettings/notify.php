@@ -1,12 +1,16 @@
-
-<<<<<<< HEAD
-<title>Application ID</title>
-=======
-<title>Interview</title>
->>>>>>> c2519fa563a785cf8a5699ce9a49ad90cef7fbe8
+<?php
+/**
+ * Created by PhpStorm.
+ * User: DiniX
+ * Date: 18-Dec-17
+ * Time: 12:49 AM
+ */
+?>
+<title>Success</title>
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
 <link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}</style>
+<style> footer{ position: absolute; right: 0; bottom: 0; left: 0;}</style>
 </head>
 <body>
 <!-------------    Navigation Bar  ------------>
@@ -21,7 +25,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a class="navifont" href="<?php echo URL?>schoolHome">Home</a></li>
+                <li><a class="navifont" href="<?php echo URL?>ministryHome">Home</a></li>
                 <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1600%">Logout</a></li>
             </ul>
 
@@ -30,39 +34,26 @@
 </nav>
 <!-------------------------------------------->
 
+
 <div class="container">
 
-    <form action="<?php echo URL;?>interview/loadApplicant" method="post" id="signup">
+    <form id="signup" action="" method="post" id="searchStu">
 
         <div class="header">
 
-            <h3>LOAD APPLICANT DETAILS</h3>
-
-            <p>Enter Applicantion ID</p>
+            <h3>Username & Password changed successfully..!!</h3>
 
         </div>
-
-        <div class="sep"></div>
-        <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-
-            Application ID is incorrect
-        </div>
-
 
 
         <div class="inputs">
-            <label for="application_ID"><b>Application ID</b></label><br />
-            <input name="application_ID" type="text" placeholder=" Enter Application ID" autofocus />
 
-
-            <input id="submit" type="submit"/>
 
         </div>
 
     </form>
 
 </div>
-​
 </body>
 </html>
+

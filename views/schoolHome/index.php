@@ -62,6 +62,11 @@
             <a href="interview/index"><h4 class="logo-small">Interview</h4></a>
             <p>Custom interface for interview</p>
         </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href="accSettings/index"><h4 class="logo-small">Account Settings</h4></a>
+            <p>Change your username and password</p>
+        </div>
     </div>
     <br><br>
 

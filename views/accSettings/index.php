@@ -1,12 +1,31 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: DiniX
+ * Date: 17-Dec-17
+ * Time: 10:30 PM
+ */
+?>
 
-<<<<<<< HEAD
-<title>Application ID</title>
-=======
-<title>Interview</title>
->>>>>>> c2519fa563a785cf8a5699ce9a49ad90cef7fbe8
+<title>Change Account Settings</title>
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
 <link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}</style>
+<script type="text/javascript">
+    <!--
+    function validatePWD(){
+        var pass1 = document.getElementById("pass1").value;
+        var pass2 = document.getElementById("pass2").value;
+        var ok = true;
+        if (pass1 != pass2) {
+            alert("Re-entered passwoed does not match");
+            ok = false;
+        }
+        return ok;
+    }
+    //-->
+</script>
+
 </head>
 <body>
 <!-------------    Navigation Bar  ------------>
@@ -32,13 +51,11 @@
 
 <div class="container">
 
-    <form action="<?php echo URL;?>interview/loadApplicant" method="post" id="signup">
+    <form action="change" method="post" id="signup" onsubmit="return validatePWD();">
 
         <div class="header">
 
-            <h3>LOAD APPLICANT DETAILS</h3>
-
-            <p>Enter Applicantion ID</p>
+            <h2>Change your username and password</h2>
 
         </div>
 
@@ -46,17 +63,18 @@
         <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 
-            Application ID is incorrect
+            Username and password changed successfully
         </div>
 
-
-
         <div class="inputs">
-            <label for="application_ID"><b>Application ID</b></label><br />
-            <input name="application_ID" type="text" placeholder=" Enter Application ID" autofocus />
+            <label for="username" ><b>Username</b></label><br />
+            <input name="username" type="text" autofocus />
+            <label for="pwd"><b>Password (minimum 8 characters)</b></label><br />
+            <input id="pass1" name="pwd" type="password" pattern=".{8,}"   required />
+            <label for="pwd2"><b>Re-enter Password</b></label><br />
+            <input id="pass2" name="pwd2" type="password" pattern=".{8,}"   required />
 
-
-            <input id="submit" type="submit"/>
+            <input id="submit" type="submit"  value="Save Changes"/>
 
         </div>
 

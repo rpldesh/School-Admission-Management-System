@@ -26,7 +26,7 @@
     }
     //-->
 </script>
-<style> footer{ position: absolute; right: 0; bottom: 0; left: 0;}</style>
+
 </head>
 <body>
 <!-------------    Navigation Bar  ------------>

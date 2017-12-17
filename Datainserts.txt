@@ -4,8 +4,8 @@ insert into `users` (`u_ID`,`user_type`,`first_name`,`last_name`,`street_no`,`st
 ('3','inserter','Shalika','Ariyasinghe','7','Hasitha Mawatha','Bemmulla','active'),
 ('4','admin','Lakshitha','Rajapakse','102','Parakrama Mawatha','Yakkala','active'),
 ('5','clerk','Nimal','Munasinghe','122','Rawathawaththa','Moratuwa','active'),
-('6','interviewer','Kamal','Adikari','No.12/15','Vishaka Rd','Veyangoda','restricted'),
-('7','inserter','Amal','Fernando','No.12','Gajaba Rd','Gampaha','restricted'),
+('6','principal','Kamal','Adikari','No.12/15','Vishaka Rd','Veyangoda','active'),
+('7','inserter','Amal','Fernando','No.12','Gajaba Rd','Gampaha','sctive'),
 ('8','inserter','Sunil','Perera','45/55','Ananda Mawatha','Gampaha','active'),
 ('9','interviewer','Sanath','Weerakody','No.65','Ihalgama Rd','Gampaha','active'),
 ('10','clerk','Lalitha','Samaraweera','No.78/85','Meri Biso Rd','Colombo','active');
@@ -24,24 +24,44 @@ insert into `login` (`username`,`pwd`,`u_ID`) values
 
 
 insert into `student`(`std_ID`,`first_name`,`mid_name`,`last_name`,`gender`,`DoB`,`street_no`,`street_name`,`city`,`district`,`achievements`) values
-('1/001','Hiruni','Yasara','Senarath','female','1996-10-05','no9','weeregoda','Pallewela','Gampaha','chess champion'),
+('1/001','Hiruni','Yasara','Senarath','female','1996-10-05','No9','Weragoda','Pallewela','Gampaha','Wester province inter school Chess tournament(2010) - Runners up'),
 ('2/001','Thisara','','Karunathilaka','male','1993-07-07','7','Temple Rd','Wadurawa','Gampaha','Singing champion'),
-('2/002','Dilsha','Nirmani','Karunathilaka','female','1995-08-08','No.14','Temple Rd','Veyanoda','Gampaha','Dancing champion'),
-('3/001','Radeeka','Madushani','Ariyasinghe','female','1990-04-02','No.7','Shoba','Bemmulla','Gampaha','Art champion');
+('1/003','Dilsha','Nirmani','Karunathilaka','female','1995-08-08','No.14','Temple Rd','Veyanoda','Gampaha','Dancing champion'),
+('1/002','Radeeka','Madushani','Ariyasinghe','female','1990-04-02','No.7','Shoba','Bemmulla','Gampaha','Art champion'),
+('1/004','Chalani','','Muthumali','female','1995-01-02','No.8/b','Gajaba Rd','Ganemulla','Gampaha',''),
+('1/005','Thisuri','Dileka','Anandasiri','female','2000-02-06','','Mudungoda','Gampaha','Gampaha','Swimming champion'),
+('1/006','Thamali','Nadeesha','Herath','female','2001-11-23','No.121/2','Ranathisara Mw','Kandana','Gampaha','Athletics champion'),
+('1/007','Linusha','Kowshadhi','Ariyarathna','female','2006-08-08','No.90/1','Siyane Rd','Gampaha','Gampaha','Athletics champion'),
+('1/008','Dilmi','Chanchala','Perera','female','1999-07-03','No.7','Welipenna','Minuwangoda','Gampaha','Art champion'),
+('1/009','Hasini','Nisansala','Perera','female','1990-04-02','No. 43','Kurulu Vimana','Bemmulla','Gampaha','');
 
 insert into `school`(`sch_ID`,`sch_name`,`street_no`,`street_name`,`city`,`district`,`number_of_vacancies`) values
-('001','Sri Bodhi Vidyalaya','No.122','Sri Bodhi Rd','Gampaha','Gampaha','198'),
+('001','Sri Bodhi Vidyalaya','No.2','Sri Bodhi Rd','Gampaha','Gampaha','120'),
 ('002','Bandarawaththa Parakrama Vidyalaya','','Bandarawaththa Rd','Gampaha','Gampaha','198'),
 ('003','Gothami Vidyalaya','','Oruthota Rd','Gampaha','Gampaha','165'),
 ('004','Pitiyagedara Primary School','','Mahawita Rd','Bemmulla','Gampaha','100'),
 ('005','Vidyaloka Maha Vidyalaya','','Guru Vidyala Rd','Veyangoda','Gampaha','132');
 
+insert into `attend`(`std_ID`,`sch_ID`,`dateOfAdmission`,`dateOfLeave`,`state`) values
+('1/001','001','2007-01-01','2016-12-12','past'),
+('2/001','001','2002-01-31','2016-10-12','past'),
+('1/005','001','2011-01-01','2010-10-02','past'),
+('1/002','001','2007-01-01','2016-12-12','past'),
+('1/003','001','2007-01-09','2016-12-31','past'),
+('1/004','001','2007-11-01','2016-12-12','past'),
+('1/006','001','2007-01-01','','current'),
+('1/007','001','2007-01-01','','current'),
+('1/008','001','2007-01-01','','current'),
+('1/009','001','2007-01-01','','current');
+
 insert into `school_staff`(`u_ID`,`sch_ID`,`user_type`) values
 ('1','001','principal'),
 ('2','001','interviewer'),
 ('3','001','inserter'),
-('8','003','inserter'),
-('9','004','interviewer');
+('8','002','inserter'),
+('6','002','principal'),
+('7','002','inserter'),
+('9','002','interviewer');
 
 
 
