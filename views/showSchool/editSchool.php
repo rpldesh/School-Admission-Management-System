@@ -11,8 +11,33 @@ foreach($this->School_details as $row){
 <link href="http://localhost/School-Admission-Management-System/public/css/login.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
-<style> div.alert{display: none;}</style>
+<style> div.alert{display: none;}
+    .navifont{
+        font-size: 150%;
+    }
+</style>
 <body>
+<!-------------    Navigation Bar  ------------>
+<nav class="navbar navbar-inverse navbarmod">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a class="navifont" href="<?php echo URL?>ministryHome">Home</a></li>
+                <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1550%">Logout</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-------------------------------------------->
+
 <table>
     <th colspan="2" class="change_stu_details">
         Change School Details
@@ -62,7 +87,11 @@ foreach($this->School_details as $row){
             <th>City:</th>
             <td><input class="form-control" type="number" name="number_of_vacancies" value="<?php echo $row['number_of_vacancies']?>"  autofocus /></td>
         </tr>
-        <input name="Submit_change_Stu" type="submit" value="Save Changes">
+
+        <tr>
+            <td colspan="2"><input class="Submit_btn" name="Submit_change_Stu" type="submit" value="Save Changes"></td>
+        </tr>
+
     </tbody>
 </table>
 
