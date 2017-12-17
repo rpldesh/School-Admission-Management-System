@@ -89,7 +89,7 @@ foreach($this->School_details as $row){
         </tr>
 
         <tr>
-            <td colspan="2"><input  name="Submit_change_Stu" type="submit" value="Save Changes"></td>
+            <td colspan="2"><input class="Submit_btn" name="Submit_change_Stu" type="submit" value="Save Changes"></td>
         </tr>
 
     </tbody>
