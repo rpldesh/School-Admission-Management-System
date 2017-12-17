@@ -1,5 +1,5 @@
 
-<title>Title</title>
+<title>Application ID</title>
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
 <link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}</style>
@@ -16,6 +16,14 @@
             <p>Enter Applicantion ID</p>
 
         </div>
+
+        <div class="sep"></div>
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+
+            Application ID is incorrect
+        </div>
+
 
 
         <div class="inputs">
