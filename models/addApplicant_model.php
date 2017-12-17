@@ -10,7 +10,7 @@ class AddApplicant_Model extends Model
     {
         parent::__construct($user_type);
         Session::init();
-        $this->sch_ID=Session::get('user_id');
+        $this->sch_ID=Session::get('sch_ID');
         $this->user_ID = Session::get('user_id');
         $loggedIn = Session::get('loggedIn');
         if ($loggedIn == false) {
@@ -199,15 +199,15 @@ class AddApplicant_Model extends Model
 
 
             }
-            $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
-            $this->db->insert('apply',$applyData);
+            $applicationData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
+            $this->db->insert('apply',$applicationData);
 
             $this->db->commit();
 
             ?>
             <style>div.alert{display:inline-block;}</style>
-
             <?php
+
 
         }catch(Exception $e){
             $this->db->rollBack();

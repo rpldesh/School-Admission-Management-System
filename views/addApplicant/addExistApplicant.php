@@ -51,7 +51,7 @@
             <label for="application_ID"><b>Application ID</b></label><br />
             <input name="application_ID" value="<?php echo $app_ID;?> " type="text" readonly />
             <label for="distanceToSchl"><b>Distance to School</b></label><br />
-            <input name="distanceToSchl" type="text" placeholder="To nearest two decimal places in km" autofocus />
+            <input name="distanceToSchl" type="text" placeholder="To nearest two decimal places in km" required autofocus />
             <label for="academic_staff_ref"><b>Academic Staff references</b></label><br />
             <input name="academic_staff_ref" type="text" placeholder="Academic Staff references" autofocus />
             <label for="state_emp_ref"><b>State employee reference</b></label><br />

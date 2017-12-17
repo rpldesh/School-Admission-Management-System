@@ -73,7 +73,7 @@ $app_ID=Session::get('application_ID'); ?>
             <label for="guardian_LName"><b>Guardian's Last Name</b></label><br />
             <input name="guardian_LName" type="text" placeholder="Last Name of Guardian" autofocus />
             <label for="distanceToSchl"><b>Distance to School</b></label><br />
-            <input name="distanceToSchl" type="text" placeholder="To nearest two decimal places in km" autofocus />
+            <input name="distanceToSchl" type="text" placeholder="To nearest two decimal places in km" required autofocus />
             <label for="academic_staff_ref"><b>Academic Staff references</b></label><br />
             <input name="academic_staff_ref" type="text" placeholder="Academic Staff references" autofocus />
             <label for="state_emp_ref"><b>State employee reference</b></label><br />
