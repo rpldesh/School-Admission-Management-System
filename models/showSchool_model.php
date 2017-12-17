@@ -18,9 +18,8 @@ class showSchool_model extends Model
         $stmt= $this->db->prepare("SELECT * FROM school");
         $stmt->execute();
         return $stmt->fetchAll();
-
-
     }
+
     public function show_count(){
         $stmt= $this->db->prepare("SELECT * FROM school");
         $stmt->execute();

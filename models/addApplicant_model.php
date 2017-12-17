@@ -191,7 +191,7 @@ class AddApplicant_Model extends Model
                     $this->db->insert('refer',$referData);
                 }else{
                     echo '<script language="javascript">';
-                    echo 'alert("Error occurred :( Failed to insert")';
+                    echo 'alert("Error occurred. Failed to insert")';
                     echo 'window . location = \"http://localhost/School-Admission-Management-System/addApplicant\"';
                     echo '</script>';
 

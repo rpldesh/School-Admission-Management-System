@@ -8,8 +8,6 @@
  */
 class MinistryHome_Model extends Model
 {
-    private $user_type;
-    private $school_name;
 
     public function __construct($user_type)
     {

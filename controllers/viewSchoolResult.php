@@ -13,7 +13,6 @@ class ViewSchoolResult extends Controller
         parent::__construct();
         Session::init();
         $loggedIn = Session::get('loggedIn');
-        $schoolID = Session::get('sch_ID');
         if($loggedIn == false){
             Session::destroy();
             header('location'.URL.'index');
