@@ -42,8 +42,8 @@
         <tr>
             <th>User Type</th>
             <td><select id="u_type" name="u_type" required>
-                    <option value="admin" >Admin</option>
-                    <option value="clerk" >Clerk</option></select>
+                    <option value="admin" <?php if($row['user_type']=='admin') echo 'selected'; ?>>Admin</option>
+                    <option value="clerk" <?php if($row['user_type']=='clerk') echo 'selected'; ?>>Clerk</option></select>
             </td>
         </tr>
 

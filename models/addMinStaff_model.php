@@ -32,9 +32,13 @@ class AddMinStaff_Model extends Model
         $user_type = $_POST["user_type"];
 
         $uData = array('u_ID'=>$u_id,'first_name'=>$f_name,'last_name'=>$l_name,'user_type'=>$user_type,'user_status'=>'active');
+        $logData = array('u_ID'=>$u_id,'pwd'=>Hash::create('md5', $f_name,HASH_PASSWORD_KEY),'username'=>$f_name);
 
         try {
+            $this->db->beginTransaction();
             $this->db->insert('users', $uData);
+            $this->db->insert('login', $logData);
+            $this->db->commit();
         } catch (PDOException $e) {
             if ($e->getCode()==23000) {
                 echo '<script language="javascript">';
@@ -45,6 +49,7 @@ class AddMinStaff_Model extends Model
                 echo 'alert("You may not have privileges to edit user details\nPlease recheck and try again")';
                 echo '</script>';
             }
+            $this->db->rollBack();
         }
     }
 

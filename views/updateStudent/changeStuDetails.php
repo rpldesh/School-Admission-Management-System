@@ -73,7 +73,7 @@
 
         <tr>
             <th>DoB</th>
-            <td><input name="dob" type="date" autofocus value="<?php echo $row['DoB'] ?> "/><br /></td>
+            <td><input name="dob" type="date" autofocus value="<?php echo date('Y-m-d',strtotime($row['DoB'])) ?> "/><br /></td>
         </tr>
 
         <tr>
@@ -81,15 +81,6 @@
             <td><input name="land_phone" type="text"  autofocus /></td>
         </tr>
 
-        <tr>
-            <th>Mobile phone No 1</th>
-            <td><input name="mobile_phone1" type="text"  autofocus /></td>
-        </tr>
-
-        <tr>
-            <th>Mobile phone No 2</th>
-            <td><input name="mobile_phone2" type="text" placeholder="" autofocus /></td>
-        </tr>
 
         <tr>
             <th>Street No</th>
@@ -122,7 +113,7 @@
 
         <tr>
             <th>Date Of Admission</th>
-            <td><input name="date_of_add" type="date" required/><br /></td>
+            <td><input name="date_of_add" value="<?php echo date('Y-m-d',strtotime($row['dateOfAdmission'])) ?>" type="date" required/><br /></td>
         </tr>
 
         <tr>
@@ -130,7 +121,10 @@
             <td><input name="achievements" value="<?php echo $row['achievements'] ?> " type="text" required/><br /></td>
         </tr>
 
-        <input name="Submit_change_Stu" type="submit">
+        <tr>
+            <td colspan="2"><input class="Submit_btn" align ="center" name="Submit_change_Stu" type="submit"><br /></td>
+        </tr>
+
     </tbody>
 </table>
 
