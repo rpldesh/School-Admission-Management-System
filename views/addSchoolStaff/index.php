@@ -6,10 +6,13 @@
  * Time: 10:47 AM
  */
 ?>
-<title>Title</title>
+<title>School Staff</title>
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
-<style> div.alert{display: none;}</style>
+<style> div.alert{display: none;}
+    .navifont{
+        font-size: 150%;
+    }</style>
 <script type="text/javascript">
     <!--
     function getConfirmation(){
@@ -23,9 +26,32 @@
     }
     //-->
 </script>
-<style> footer{ position: absolute; right: 0; bottom: 0; left: 0;}</style>
+
 </head>
 <body>
+<!-------------    Navigation Bar  ------------>
+<nav class="navbar navbar-inverse navbarmod">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a class="navifont" href="<?php echo URL?>schoolHome">Home</a></li>
+                <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1550%">Logout</a></li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-------------------------------------------->
+
+
+
 
         <table class="table">
             <tbody>

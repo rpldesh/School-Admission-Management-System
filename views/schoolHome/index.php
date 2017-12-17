@@ -12,9 +12,8 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Member Profile</a></li>
-                <li><a href="#">About</a></li>
+                <li><a class="navifont" href="<?php echo URL?>schoolHome">Home</a></li>
+                <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1600%">Logout</a></li>
             </ul>
 
         </div>
@@ -50,8 +49,8 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">Results</h4></a>
-            <p>View final results for applicants of your school</p>
+            <a href="viewSchoolResult/getResult"><h4 class="logo-small">Results</h4></a>
+            <p>View final results of applicants of your school</p>
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
@@ -62,6 +61,11 @@
             <span class="glyphicon glyphicon-list-alt"></span>
             <a href="interview/index"><h4 class="logo-small">Interview</h4></a>
             <p>Custom interface for interview</p>
+        </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href="accSettings/index"><h4 class="logo-small">Account Settings</h4></a>
+            <p>Change your username and password</p>
         </div>
     </div>
     <br><br>

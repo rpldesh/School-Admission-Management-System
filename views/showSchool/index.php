@@ -20,7 +20,7 @@
 
     }
     .navifont{
-        font-size: 180%;
+        font-size: 150%;
     }
 </style>
 
@@ -37,9 +37,8 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a class="navifont" href="#">Home</a></li>
-                    <li><a class="navifont" href="#">Member Profile</a></li>
-                    <li><a class="navifont" href="#">About</a></li>
+                    <li><a class="navifont" href="<?php echo URL?>ministryHome">Home</a></li>
+                    <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1550%">Logout</a></li>
                 </ul>
 
             </div>

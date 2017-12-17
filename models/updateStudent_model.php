@@ -9,7 +9,6 @@
 class UpdateStudent_Model extends Model
 {
     private $schoolID;
-    private $scl_id;
 
     public function __construct($user_type)
     {
@@ -47,13 +46,11 @@ class UpdateStudent_Model extends Model
         $street_name=$_POST['street_name'];
         $city=$_POST['city'];
         $district=$_POST['district'];
-        $date_of_add=$_POST['date_of_add'];
-
 
 
         try {
             $this->db->beginTransaction();
-            $stmt1 = $this->db->prepare('UPDATE student SET first_name=:first_name,mid_name=:mid_name,last_name=:last_name,gender=:gender,DoB=:DoB,street_no=:street_no,street_name=:street_name,city=:city,district=:district WHERE std_ID = :std_ID');
+            $stmt1 = $this->db->prepare(' UPDATE student SET first_name=:first_name,mid_name=:mid_name,last_name=:last_name,gender=:gender,DoB=:DoB,street_no=:street_no,street_name=:street_name,city=:city,district=:district WHERE std_ID = :std_ID ');
             $stmt1->execute(array(':std_ID'=>$student_ID,
                 ':first_name'=>$first_name,
                 ':mid_name'=> $mid_name,
@@ -63,9 +60,12 @@ class UpdateStudent_Model extends Model
                 ':street_no'=> $street_no,
                 ':street_name'=> $street_name,
                 ':city'=>$city,
-                ':district'=>$district,
-                ':date_of_add'=>$date_of_add));
+                ':district'=>$district));
             $this->db->commit();
+            ?>
+            <style>div.alert{display:inline-block;}</style>
+
+            <?php
             echo '<script language="javascript">';
             echo 'alert("Student details updated Successfully!")';
             echo 'window . location = \"http://localhost/School-Admission-Management-System/updateStudent\"';

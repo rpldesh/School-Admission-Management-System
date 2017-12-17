@@ -16,9 +16,8 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Member Profile</a></li>
-                <li><a href="#">About</a></li>
+                <li><a class="navifont" href="<?php echo URL?>ministryHome">Home</a></li>
+                <li><a class="navifont" href="<?php echo URL?>login/logout" style="margin-left: 1600%">Logout</a></li>
             </ul>
 
         </div>
@@ -44,7 +43,7 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""> <h4 class="logo-small">Qualified lists of schools</h4></a>
+            <a href="viewAllResults/index"> <h4 class="logo-small">Qualified lists of schools</h4></a>
             <p>View qualification results of schools</p>
         </div>
         <br />
@@ -53,15 +52,13 @@
             <a href="addMinStaff/showStaff"><h4 class="logo-small">Add/Edit Staff</h4></a>
             <p>Add new members accounts for the system</p>
         </div>
+        <div class="col-sm-4">
+            <span class="glyphicon glyphicon-list-alt"></span>
+            <a href="minAccSettings/index"><h4 class="logo-small">Account Settings</h4></a>
+            <p>Change your username and password</p>
     </div>
-    <br><br>
-
-
-    <div class="col-sm-4">
-        <span class="glyphicon glyphicon-wrench"></span>
-        <h4>Contact</h4>
-        <p></p>
     </div>
+
 </div>
 
 

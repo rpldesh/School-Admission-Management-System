@@ -12,6 +12,13 @@ class UpdateStudent extends Controller
     function __construct()
     {
         parent::__construct();
+        Session::init();
+        $loggedIn = Session::get('loggedIn');
+        $schoolID = Session::get('sch_ID');
+        if($loggedIn == false){
+            Session::destroy();
+            header('location'.URL.'index');
+        }
     }
     public function index(){
         $this->view-> render('updateStudent/index');
@@ -20,9 +27,6 @@ class UpdateStudent extends Controller
     {
         $this->view->Stu_details = $this->model->getStuDetails();
         $this->view->render('updateStudent/changeStuDetails');
-    }
-    function getId($id){
-        
     }
 
     public function updateDetails(){

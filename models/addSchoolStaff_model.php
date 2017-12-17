@@ -15,6 +15,7 @@ class AddSchoolStaff_Model extends Model
         parent::__construct($user_type);
         Session::init();
         $this->schoolID = Session::get('sch_ID');
+
     }
     public function showStaff(){
 

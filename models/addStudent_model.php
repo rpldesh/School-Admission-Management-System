@@ -10,14 +10,92 @@ class AddStudent_Model extends Model
 {
     private $user_ID;
     private $sch_ID;
+    private $std_ID;
     function __construct($user_type)
     {
         parent::__construct($user_type);
         Session::init();
-        $this->user_ID=Session::get('user_id');
+        $this->sch_ID=Session::get('sch_ID');
+        $this->user_ID = Session::get('user_id');
+        $loggedIn = Session::get('loggedIn');
+        if ($loggedIn == false) {
+            Session::destroy();
+            header('location' . URL . 'index');
+            exit();
+
+        }
     }
 
-    public function addStudent(){
+    public function getStuDetails()
+    {
+
+        $stmt=$this->db->prepare("SELECT * FROM student NATURAL JOIN attend WHERE std_ID=:id");
+        $stmt->execute(array('id' => $this->std_ID));
+        $count1=$stmt->rowCount();
+        if($count1){
+            return $stmt->fetchAll();
+        }
+        else{
+            $message = "This user Id no longer exist in your school";
+            echo "<script type = 'text/javascript' > alert('$message');window . location = 'http://localhost/School-Admission-Management-System/updateStudent';</script>";
+        }
+
+    }
+
+    public function checkStuID()
+    {
+        $stt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID=:u_ID");
+        $stt->execute(array(
+            ':u_ID' => $this->user_ID));
+        $count4 = $stt->rowCount();
+        if ($count4 > 0) {
+            $result = $stt->fetchAll();
+            foreach ($result as $row) {
+                $sch_ID = $row['sch_ID'];
+                Session::set('sch_ID', $sch_ID);
+                $this->sch_ID = Session::get('sch_ID');
+            }
+        }
+
+        $std_ID = $_POST['std_ID'];
+        $this->std_ID=$std_ID;
+        $stmt = $this->db->prepare("SELECT * FROM student WHERE std_ID=:std_ID");
+        $stmt->execute(array(':std_ID' => $std_ID));
+        $count1 = $stmt->rowCount();
+        return $count1;
+    }
+
+
+
+        public function addExistStudent($id){
+        try {
+            $dateOfAdmission = $_POST['date_of_add'];
+            $admissionData = array(
+                'std_ID' => $id,
+                'sch_ID' => $this->sch_ID,
+                'dateOfAdmission' => $dateOfAdmission,
+                'state' => 'current'
+            );
+            $this->db->beginTransaction();
+            $this->db->insert('attend', $admissionData);
+
+            ?>
+            <style>div.alert {
+                    display: inline-block;
+                }</style>
+            <?php
+        $this->db->commit();
+
+        }catch (Exception $e){
+            $this->db->rollBack();
+            echo '<script language="javascript">';
+            echo 'alert("Error occured :( Failed to insert")';
+            echo '</script>';
+        }
+        }
+
+
+        public function addNewStudentDetails(){
         try{
         $student_ID=$_POST['student_ID'];
         $first_name=$_POST['student_f_name'];
@@ -101,7 +179,6 @@ class AddStudent_Model extends Model
         }
 
     }
-
 
 }
 ?>
