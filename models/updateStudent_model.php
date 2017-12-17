@@ -46,8 +46,6 @@ class UpdateStudent_Model extends Model
         $street_name=$_POST['street_name'];
         $city=$_POST['city'];
         $district=$_POST['district'];
-        $date_of_add=$_POST['date_of_add'];
-
 
 
         try {
@@ -64,6 +62,10 @@ class UpdateStudent_Model extends Model
                 ':city'=>$city,
                 ':district'=>$district));
             $this->db->commit();
+            ?>
+            <style>div.alert{display:inline-block;}</style>
+
+            <?php
             echo '<script language="javascript">';
             echo 'alert("Student details updated Successfully!")';
             echo 'window . location = \"http://localhost/School-Admission-Management-System/updateStudent\"';

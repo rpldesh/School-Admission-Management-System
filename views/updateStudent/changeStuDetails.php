@@ -31,6 +31,14 @@
 </nav>
 <!-------------------------------------------->
 
+
+<div class="sep"></div>
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+
+    Student is updated successfully!
+</div>
+
 <table>
     <?php
     foreach($this->Stu_details as $row){
@@ -117,7 +125,7 @@
         </tr>
 
         <tr>
-            <th>Acievements</th>
+            <th>Achievements</th>
             <td><input name="achievements" value="<?php echo $row['achievements'] ?> " type="text" required/><br /></td>
         </tr>
 

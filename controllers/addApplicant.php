@@ -18,13 +18,15 @@ class AddApplicant extends Controller
     }
     function addNewApplicantDet()
     {
-        $this->index();
+
         $this->model->addNewApplicantDet();
+        $this->index();
     }
     function addExistApplicantDet()
     {
-        $this->index();
+
         $this->model->addExistApplicantDet();
+        $this->index();
     }
 
 

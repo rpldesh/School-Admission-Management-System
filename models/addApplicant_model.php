@@ -10,6 +10,7 @@ class AddApplicant_Model extends Model
     {
         parent::__construct($user_type);
         Session::init();
+        $this->sch_ID=Session::get('user_id');
         $this->user_ID = Session::get('user_id');
         $loggedIn = Session::get('loggedIn');
         if ($loggedIn == false) {
@@ -22,7 +23,6 @@ class AddApplicant_Model extends Model
 
     public function checkAppID()
     {
-
         $stt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID=:u_ID");
         $stt->execute(array(
             ':u_ID' => $this->user_ID));
@@ -47,9 +47,9 @@ class AddApplicant_Model extends Model
 
 
     public function addExistApplicantDet(){
+
         try{
             $application_ID = $_POST['application_ID'];
-
             $sibling_ref = $_POST['sibling_ref'];
             $parent_ref = $_POST['parent_ref'];
             $distanceToSchl = $_POST['distanceToSchl'];
@@ -59,7 +59,6 @@ class AddApplicant_Model extends Model
 
             $this->db->beginTransaction();
             if (($parent_ref) != null) {
-                $std_ID = $parent_ref;
                 $reference_type = "parent";
                 $parentStmt = $this->db->prepare("SELECT * FROM attend WHERE std_ID=:std_ID and sch_ID=:sch_ID ");
                 $parentStmt->execute(array(
@@ -68,17 +67,18 @@ class AddApplicant_Model extends Model
                 $count1 = $parentStmt->rowCount();
                 if ($count1 > 0) {
 
-                    $referData=array('application_ID'=>$application_ID,'std_ID'=>$std_ID,'reference_type'=>$reference_type);
+                    $referData=array('application_ID'=>$application_ID,'std_ID'=>$parent_ref,'reference_type'=>$reference_type);
                     $this->db->insert('refer',$referData);
                 }else{
-                    $message = "Student ID doesn't exist";
-                    echo "<script type = 'text/javascript' > alert('$message');window . location = \"../index\";</script>";
+                    echo '<script language="javascript">';
+                    echo 'alert("Student ID doesn\'t exist";)';
+                    echo 'window . location = \"http://localhost/School-Admission-Management-System/..\addApplicant\"';
+                    echo '</script>';
 
                 }
 
             }
             if (($sibling_ref) != null) {
-                $std_ID = $sibling_ref;
                 $reference_type = "sibling";
                 $siblingStmt = $this->db->prepare("SELECT * FROM attend WHERE std_ID=:std_ID and sch_ID=:sch_ID ");
                 $siblingStmt->execute(array(
@@ -87,19 +87,21 @@ class AddApplicant_Model extends Model
                 $count2 = $siblingStmt->rowCount();
                 if ($count2 > 0) {
 
-                    $referData=array('application_ID'=>$application_ID,'std_ID'=>$std_ID,'reference_type'=>$reference_type);
+                    $referData=array('application_ID'=>$application_ID,'std_ID'=>$sibling_ref,'reference_type'=>$reference_type);
                     $this->db->insert('refer',$referData);
                 }else{
-                    $message = "Student ID doesn't exist";
-                    echo "<script type = 'text/javascript' > alert('$message');window . location = \"../index\";</script>";
+                    echo '<script language="javascript">';
+                    echo 'alert("Error occurred :( Failed to insert")';
+                    echo 'window . location = \"http://localhost/School-Admission-Management-System/..\addApplicant\"';
+                    echo '</script>';
 
                 }
 
 
             }
-
             $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
             $this->db->insert('apply',$applyData);
+
             $this->db->commit();
 
             ?>
@@ -114,6 +116,8 @@ class AddApplicant_Model extends Model
             echo '</script>';
 
         }
+
+
     }
 
 
@@ -186,8 +190,10 @@ class AddApplicant_Model extends Model
                     $referData=array('application_ID'=>$application_ID,'std_ID'=>$std_ID,'reference_type'=>$reference_type);
                     $this->db->insert('refer',$referData);
                 }else{
-                    $message = "Student ID doesn't exist";
-                    echo "<script type = 'text/javascript' > alert('$message');window . location = \"../index\";</script>";
+                    echo '<script language="javascript">';
+                    echo 'alert("Error occurred :( Failed to insert")';
+                    echo 'window . location = \"http://localhost/School-Admission-Management-System/addApplicant\"';
+                    echo '</script>';
 
                 }
 
