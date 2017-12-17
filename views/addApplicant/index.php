@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
 <title>Add New Applicant</title>
-=======
-<title>Title</title>
->>>>>>> d15154cc5e001596f9adfab40e9f051b323ff556
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
 <link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}</style>
