@@ -62,14 +62,12 @@ class UpdateStudent_Model extends Model
                 ':city'=>$city,
                 ':district'=>$district));
             $this->db->commit();
-            ?>
-            <style>div.alert{display:inline-block;}</style>
-
-            <?php
             echo '<script language="javascript">';
             echo 'alert("Student details updated Successfully!")';
-            echo 'window . location = \"http://localhost/School-Admission-Management-System/updateStudent\"';
+            //echo 'window . location = \"http://localhost/School-Admission-Management-System/updateStudent\"';
             echo '</script>';
+
+
 
         } catch (PDOException $e) {
             $this->db->rollBack();

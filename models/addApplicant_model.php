@@ -97,15 +97,16 @@ class AddApplicant_Model extends Model
 
                 }
 
+
             }
             $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
             $this->db->insert('apply',$applyData);
 
             $this->db->commit();
 
-            ?>
-            <style>div.alert{display:inline-block;}</style>
-            <?php
+            echo '<script language="javascript">';
+            echo 'alert("Applicant Added successfully!")';
+            echo '</script>';
 
 
         }catch(Exception $e){
@@ -203,10 +204,9 @@ class AddApplicant_Model extends Model
 
             $this->db->commit();
 
-            ?>
-            <style>div.alert{display:inline-block;}</style>
-            <?php
-
+            echo '<script language="javascript">';
+            echo 'alert("Applicant Added successfully!")';
+            echo '</script>';
 
         }catch(Exception $e){
             $this->db->rollBack();

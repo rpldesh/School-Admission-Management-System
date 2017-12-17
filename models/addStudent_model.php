@@ -79,17 +79,18 @@ class AddStudent_Model extends Model
             $this->db->beginTransaction();
             $this->db->insert('attend', $admissionData);
 
-            ?>
-            <style>div.alert {
-                    display: inline-block;
-                }</style>
-            <?php
+            echo '<script language="javascript">';
+            echo 'alert("Student is added Successfully!")';
+            //echo 'window . location = \"http://localhost/School-Admission-Management-System/updateStudent\"';
+            echo '</script>';
+
+
         $this->db->commit();
 
         }catch (Exception $e){
             $this->db->rollBack();
             echo '<script language="javascript">';
-            echo 'alert("Error occured :( Failed to insert")';
+            echo 'alert("Error occurred :( Failed to insert")';
             echo '</script>';
         }
         }
@@ -163,17 +164,17 @@ class AddStudent_Model extends Model
                 );
                 $this->db->insert('attend',$admissionData);
 
-                ?>
-                <style>div.alert{display:inline-block;}</style>
-
-                <?php
+                echo '<script language="javascript">';
+                echo 'alert("Student is added Successfully!")';
+                //echo 'window . location = \"http://localhost/School-Admission-Management-System/updateStudent\"';
+                echo '</script>';
             }
            
         }$this->db->commit();
         }catch (Exception $e){
             $this->db->rollBack();
             echo '<script language="javascript">';
-            echo 'alert("Error occured :( Failed to insert")';
+            echo 'alert("Error occurred :( Failed to insert")';
             echo '</script>';
 
         }
