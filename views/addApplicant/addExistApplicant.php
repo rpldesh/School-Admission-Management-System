@@ -27,7 +27,8 @@
 </nav>
 <!-------------------------------------------->
 
-
+<?php Session::init();
+        $app_ID=Session::get('application_ID'); ?>
 <div class="container">
 
     <form action="addExistApplicantDet" method="post" id="signup">
@@ -48,8 +49,8 @@
         </div>
 
         <div class="inputs">
-            <label for="applic_ID"><b>Application ID</b></label><br />
-            <input name="applic_ID" value="<?php echo $this->application_id ?>  type="text" placeholder=" Enter Application ID" autofocus />
+            <label for="application_ID"><b>Application ID</b></label><br />
+            <input name="application_ID" value="<?php echo $app_ID;?> " type="text" readonly />
             <label for="distanceToSchl"><b>Distance to School</b></label><br />
             <input name="distanceToSchl" type="text" placeholder="To nearest two decimal places in km" autofocus />
             <label for="academic_staff_ref"><b>Academic Staff references</b></label><br />

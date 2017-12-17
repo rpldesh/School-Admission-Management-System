@@ -26,7 +26,8 @@
 </nav>
 <!-------------------------------------------->
 
-
+<?php Session::init();
+$app_ID=Session::get('application_ID'); ?>
 <div class="container">
 
     <form action="addNewApplicantDet" method="post" id="signup">
@@ -48,7 +49,7 @@
 
         <div class="inputs">
             <label for="application_ID"><b>Application ID</b></label><br />
-            <input name="application_ID" type="text" placeholder=" Enter Application ID" autofocus />
+            <input name="application_ID" type="text" value="<?php echo $app_ID;?> "  readonly />
             <label for="app_f_name"><b>Applicant's First Name</b></label><br />
             <input name="app_f_name" type="text" placeholder=" Enter First Name" autofocus />
             <label for="app_m_name"><b>Applicant's Middle Name</b></label><br />

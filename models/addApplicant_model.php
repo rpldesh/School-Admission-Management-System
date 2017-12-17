@@ -20,18 +20,35 @@ class AddApplicant_Model extends Model
         }
     }
 
-    public function checkAppID(){
-        $application_ID=$_POST['application_ID'];
-        $stmt=$this->db->prepare("SELECT * FROM applicant WHERE application_ID=:application_ID");
-        $stmt->execute(array(':application_ID'=>$application_ID));
-        $count1=$stmt->rowCount();
+    public function checkAppID()
+    {
+
+        $stt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID=:u_ID");
+        $stt->execute(array(
+            ':u_ID' => $this->user_ID));
+        $count4 = $stt->rowCount();
+        if ($count4 > 0) {
+            $result = $stt->fetchAll();
+            foreach ($result as $row) {
+                $sch_ID = $row['sch_ID'];
+                Session::set('sch_ID', $sch_ID);
+                $this->sch_ID=Session::get('sch_ID');
+            }
+        }
+
+        $application_ID = $_POST['application_ID'];
+        Session::set('application_ID', $application_ID);
+        $stmt = $this->db->prepare("SELECT * FROM applicant WHERE application_ID=:application_ID");
+        $stmt->execute(array(':application_ID' => $application_ID));
+        $count1 = $stmt->rowCount();
         return $count1;
 
     }
 
+
     public function addExistApplicantDet(){
         try{
-            $application_ID = $_POST['applic_ID'];
+            $application_ID = $_POST['application_ID'];
 
             $sibling_ref = $_POST['sibling_ref'];
             $parent_ref = $_POST['parent_ref'];
@@ -44,9 +61,10 @@ class AddApplicant_Model extends Model
             if (($parent_ref) != null) {
                 $std_ID = $parent_ref;
                 $reference_type = "parent";
-                $parentStmt = $this->db->prepare("SELECT * FROM student WHERE std_ID=:std_ID");
+                $parentStmt = $this->db->prepare("SELECT * FROM attend WHERE std_ID=:std_ID and sch_ID=:sch_ID ");
                 $parentStmt->execute(array(
-                    ':std_ID' => $parent_ref));
+                    ':std_ID' => $parent_ref,
+                    ':sch_ID'=>$this->sch_ID));
                 $count1 = $parentStmt->rowCount();
                 if ($count1 > 0) {
 
@@ -62,9 +80,10 @@ class AddApplicant_Model extends Model
             if (($sibling_ref) != null) {
                 $std_ID = $sibling_ref;
                 $reference_type = "sibling";
-                $siblingStmt = $this->db->prepare("SELECT * FROM student WHERE std_ID=:std_ID");
+                $siblingStmt = $this->db->prepare("SELECT * FROM attend WHERE std_ID=:std_ID and sch_ID=:sch_ID ");
                 $siblingStmt->execute(array(
-                    ':std_ID' => $sibling_ref));
+                    ':std_ID' => $sibling_ref,
+                    ':sch_ID'=>$this->sch_ID));
                 $count2 = $siblingStmt->rowCount();
                 if ($count2 > 0) {
 
@@ -79,28 +98,15 @@ class AddApplicant_Model extends Model
 
             }
 
-            $stmt3 = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID=:u_ID");
-            $stmt3->execute(array(
-                ':u_ID' => $this->user_ID));
-            $count = $stmt3->rowCount();
-            if ($count > 0) {
-                $result = $stmt3->fetchAll();
-                foreach ($result as $row) {
-                    $this->sch_ID = $row['sch_ID'];
-
-
-                    $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
-                    $this->db->insert('apply',$applyData);
-
-
-                    ?>
-                    <style>div.alert{display:inline-block;}</style>
-
-                    <?php
-
-                }
-            }
+            $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
+            $this->db->insert('apply',$applyData);
             $this->db->commit();
+
+            ?>
+            <style>div.alert{display:inline-block;}</style>
+            <?php
+
+
         }catch(Exception $e){
             $this->db->rollBack();
             echo '<script language="javascript">';
@@ -151,9 +157,10 @@ class AddApplicant_Model extends Model
             if (($parent_ref) != null) {
                 $std_ID = $parent_ref;
                 $reference_type = "parent";
-                $parentStmt = $this->db->prepare("SELECT * FROM student WHERE std_ID=:std_ID");
+                $parentStmt = $this->db->prepare("SELECT * FROM attend WHERE std_ID=:std_ID and sch_ID=:sch_ID ");
                 $parentStmt->execute(array(
-                    ':std_ID' => $parent_ref));
+                    ':std_ID' => $parent_ref,
+                    ':sch_ID'=>$this->sch_ID));
                 $count1 = $parentStmt->rowCount();
                 if ($count1 > 0) {
 
@@ -169,9 +176,10 @@ class AddApplicant_Model extends Model
             if (($sibling_ref) != null) {
                 $std_ID = $sibling_ref;
                 $reference_type = "sibling";
-                $siblingStmt = $this->db->prepare("SELECT * FROM student WHERE std_ID=:std_ID");
+                $siblingStmt = $this->db->prepare("SELECT * FROM attend WHERE std_ID=:std_ID and sch_ID=:sch_ID ");
                 $siblingStmt->execute(array(
-                    ':std_ID' => $sibling_ref));
+                    ':std_ID' => $sibling_ref,
+                    ':sch_ID'=>$this->sch_ID));
                 $count2 = $siblingStmt->rowCount();
                 if ($count2 > 0) {
 
@@ -185,33 +193,20 @@ class AddApplicant_Model extends Model
 
 
             }
+            $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
+            $this->db->insert('apply',$applyData);
 
-            $stmt = $this->db->prepare("SELECT sch_ID FROM school_staff WHERE u_ID=:u_ID");
-            $stmt->execute(array(
-                ':u_ID' => $this->user_ID));
-            $count = $stmt->rowCount();
-            if ($count > 0) {
-                $result = $stmt->fetchAll();
-                foreach ($result as $row) {
-                    $this->sch_ID = $row['sch_ID'];
-
-
-                    $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
-                    $this->db->insert('apply',$applyData);
-
-
-                    ?>
-                    <style>div.alert{display:inline-block;}</style>
-
-                    <?php
-
-                }
-            }
             $this->db->commit();
+
+            ?>
+            <style>div.alert{display:inline-block;}</style>
+
+            <?php
+
         }catch(Exception $e){
             $this->db->rollBack();
             echo '<script language="javascript">';
-            echo 'alert("Error occured :( Failed to insert")';
+            echo 'alert("Error occurred :( Failed to insert")';
             echo '</script>';
 
         }
