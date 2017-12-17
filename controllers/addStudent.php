@@ -22,9 +22,33 @@ class AddStudent extends Controller
     function index(){
         $this->view->render('addStudent/index');
     }
-    function addStudent(){
+    /*function addStudent(){
         $this->index();
         $this->model->addStudent();
+    }*/
+
+    function addNewStudentDetails()
+    {
+
+        $this->model->addNewStudentDetails();
+        $this->index();
+    }
+    function addExistStudent($id)
+    {
+
+        $this->model->addExistStudent($id);
+        $this->index();
+    }
+
+
+    function checkStuID(){
+        $count_Stu=$this->model->checkStuID();
+        if($count_Stu>0){
+            $this->view->Stu_Details=$this->model->getStuDetails();
+            $this->view-> render('addStudent/addExistStudent');
+        }else{
+            $this->view-> render('addStudent/addNewStudent');
+        }
     }
 
 }

@@ -97,7 +97,6 @@ class AddApplicant_Model extends Model
 
                 }
 
-
             }
             $applyData=array('application_ID'=>$application_ID,'sch_ID'=>$this->sch_ID,'distanceToSchl'=>$distanceToSchl,'academic_staff_ref'=>$academic_staff_ref,'state_emp_ref'=>$state_emp_ref);
             $this->db->insert('apply',$applyData);

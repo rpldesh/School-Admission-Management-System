@@ -1,4 +1,4 @@
-<title>Chang School Details</title>
+<title>Change applicant Details</title>
 <link href="http://localhost/School-Admission-Management-System/public/css/table.css" rel="stylesheet">
 <link href="http://localhost/School-Admission-Management-System/public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}
