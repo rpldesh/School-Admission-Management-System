@@ -25,7 +25,7 @@ class interview_model extends Model
         $stmt=$this->db->prepare("select applicant.application_ID,applicant.first_name,applicant.last_name,applicant.mother_fName,applicant.mother_LName,
 applicant.father_fName,applicant.father_LName,applicant.guardian_fName,applicant.guardian_LName,applicant.gender,applicant.DoB,apply.distanceToSchl,apply.academic_staff_ref,apply.state_emp_ref from applicant natural join apply where
 applicant.application_ID=:app_id and apply.sch_ID=:sch_id");
-        $stmt->execute(array(':app_id'=>$applicant_ID,':sch_id' => $this->schoolID));
+        $stmt->execute(array(':app_id'=>$this->applicantID,':sch_id' => $this->schoolID));
         $count=$stmt->rowCount();
         if($count){
             return $stmt->fetchAll();

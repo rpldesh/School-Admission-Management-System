@@ -43,8 +43,8 @@
         </div>
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href="viewAllResults/index"> <h4 class="logo-small">Qualified lists of schools</h4></a>
-            <p>View qualification results of schools</p>
+            <a href="viewAllResults/index"> <h4 class="logo-small">Entry evaluation results of schools</h4></a>
+            <p>View qualified applicants list of each school</p>
         </div>
         <br />
         <div class="col-sm-4">

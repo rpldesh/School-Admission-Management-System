@@ -33,11 +33,6 @@
 
         <div class="col-sm-4">
             <span class="glyphicon glyphicon-list-alt"></span>
-            <a href=""><h4 class="logo-small">View Students</h4></a>
-            <p>View detils of students of your school</p>
-        </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-list-alt"></span>
             <a href="addStudent/index"><h4 class="logo-small">Add Students</h4></a>
             <p>Add new students to the school</p>
         </div>
