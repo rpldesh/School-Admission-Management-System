@@ -46,7 +46,7 @@
 
         <div class="inputs">
             <label for="student_ID"><b>Student ID</b></label><br />
-            <input name="student_ID" type="text" placeholder=" Enter Student ID" autofocus />
+            <input name="student_ID" type="text" value="<?php echo $this->getStdID;?>" readonly />
             <label for="student_f_name"><b>Student's First Name</b></label><br />
             <input name="student_f_name" type="text" placeholder="First Name" autofocus />
             <label for="student_m_name"><b>Student's Middle Name</b></label><br />

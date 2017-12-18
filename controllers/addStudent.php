@@ -47,6 +47,7 @@ class AddStudent extends Controller
             $this->view->Stu_Details=$this->model->getStuDetails();
             $this->view-> render('addStudent/addExistStudent');
         }else{
+            $this->view->getStdID=$this->model->get_ID();
             $this->view-> render('addStudent/addNewStudent');
         }
     }

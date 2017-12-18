@@ -41,6 +41,9 @@ class AddStudent_Model extends Model
         }
 
     }
+    public function get_ID(){
+        return $this->std_ID;
+    }
 
     public function checkStuID()
     {
