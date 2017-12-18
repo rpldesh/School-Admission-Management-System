@@ -16,7 +16,7 @@ $sql= "Create function distance_result(student_id varchar(20), school_id varchar
          declare d_result int;
          declare distance numeric(5,2);
          set d_result =0;
-         select distanceToSchl into distance from apply where apply.application_ID = student_id;
+         select distanceToSchl into distance from apply where sch_ID=school_id and apply.application_ID = student_id;
          IF distance <= 1 THEN
             SET d_result = 60;
          ELSEIF distance <=3 THEN
@@ -40,7 +40,7 @@ $sql= "Create function sib_ref_result(student_id varchar(20), school_id varchar(
          declare sib_ref_result int;
          declare row_count int;
          set sib_ref_result =0;
-         select count(*) into row_count from refer where application_ID = student_id and reference_type='sibling';
+         select count(*) into row_count from refer natural join attend where attend.sch_ID=school_id and application_ID = student_id and reference_type='sibling';
          IF row_count = 1 THEN
             SET sib_ref_result = 5;
          ELSE
@@ -60,7 +60,7 @@ $sql= "Create function p_ref_result(student_id varchar(20), school_id varchar(10
          declare p_ref_result int;
          declare p_count int;
          set p_ref_result =0;
-         select count(*) into p_count from refer where application_ID = student_id and 
+         select count(*) into p_count from refer  natural join attend where attend.sch_ID=school_id and application_ID = student_id and 
          reference_type='parent';
          IF p_count = 1 THEN
             SET p_ref_result = 5;
