@@ -1,9 +1,4 @@
-
-<<<<<<< HEAD
-<title>Application ID</title>
-=======
 <title>Interview</title>
->>>>>>> c2519fa563a785cf8a5699ce9a49ad90cef7fbe8
 <link href="<?php echo URL ?>public/css/login.css" rel="stylesheet">
 <link href="<?php echo URL ?>public/css/alertBox.css" rel="stylesheet">
 <style> div.alert{display: none;}</style>

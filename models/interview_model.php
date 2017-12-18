@@ -52,18 +52,18 @@ where refer.application_ID=:app_id and attend.sch_ID=:sch_id and refer.reference
             return $stmt->fetchAll();
         }
         public function distance_result(){
-            $sql="select distance_result(".$this->applicantID.",".$this->schoolID.")";
-            $stmt=$this->db->prepare($sql);
+
+            $stmt=$this->db->prepare("select distance_result('".$this->applicantID."', '".$this->schoolID."')");
             $stmt->execute();
             return $stmt->fetch();
         }
         public function sibling_ref_result(){
-            $stmt=$this->db->prepare("select sib_ref_result(".$this->applicantID.",".$this->schoolID.")");
+            $stmt=$this->db->prepare("select sib_ref_result('".$this->applicantID."', '".$this->schoolID."')");
             $stmt->execute();
             return $stmt->fetch();
         }
         public function parent_ref_result(){
-            $stmt=$this->db->prepare("select p_ref_result(".$this->applicantID.",".$this->schoolID.")");
+            $stmt=$this->db->prepare("select p_ref_result('".$this->applicantID."', '".$this->schoolID."')");
             $stmt->execute();
             return $stmt->fetch();
         }
